@@ -13,7 +13,7 @@ protocol MatchesListNetworking {
 }
 
 struct MatchesListService: MatchesListNetworking {
-    let service: Networking
+     private let service: Networking
 
     init(service: Networking) {
         self.service = service
@@ -24,7 +24,7 @@ struct MatchesListService: MatchesListNetworking {
         let url = endpoint.upcomingMatchesEndpoint(page: page)
         let headers =  [
             "accept": "application/json",
-            "authorization": "Bearer 19bZLlNADA802Bihew3yz4rhdksLZRYEc61YH3hIAbtAdku_FHU"
+            "authorization": "19bZLlNADA802Bihew3yz4rhdksLZRYEc61YH3hIAbtAdku_FHU"
           ]
         
         service.fetchService(url: url, headers: headers, method: .get, completion: completion)

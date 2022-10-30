@@ -13,15 +13,25 @@ class MatchesListViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .cyan
         let service = NetworkService()
-        let matches = MatchesListService(service: service)
+//        let matches = MatchesListService(service: service)
+//
+//        matches.fetchMatches(page: 1) { result in
+//            switch result {
+//            case .success(let list):
+//                print(list)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
 
-        matches.fetchMatches(page: 1) { result in
+        let team = TeamDetailsService(service: service)
+        team.fetchTeamDetails(teamSlug: "onyx-talents") { result in
             switch result {
-            case .success(let list):
-                print(list)
+            case .success(let team):
+                print(team)
             case .failure(let error):
                 print(error.localizedDescription)
             }
+
         }
     }
 }

@@ -13,7 +13,7 @@ protocol Networking {
 }
 
 struct NetworkService: Networking {
-    func fetchService<T>(url: String, headers: [String: String], method: HttpMethod = .get, completion: @escaping Fetch<T>) where T : Decodable {
+    func fetchService<T>(url: String, headers: [String: String], method: HttpMethod, completion: @escaping Fetch<T>) where T : Decodable {
         guard let url = URL(string: url) else {
             return completion(.failure(.invalidURL(url)))
         }
