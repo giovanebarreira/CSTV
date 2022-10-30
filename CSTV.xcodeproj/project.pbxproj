@@ -16,6 +16,12 @@
 		60A3EE55290EA74D009C2C85 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE54290EA74D009C2C85 /* Coordinator.swift */; };
 		60A3EE57290EA772009C2C85 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE56290EA772009C2C85 /* AppCoordinator.swift */; };
 		60A3EE59290EA825009C2C85 /* MatchesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE58290EA825009C2C85 /* MatchesListCoordinator.swift */; };
+		60A3EE60290EAAD9009C2C85 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE5F290EAAD9009C2C85 /* NetworkService.swift */; };
+		60A3EE62290EAF4D009C2C85 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE61290EAF4D009C2C85 /* NetworkError.swift */; };
+		60A3EE64290EAF58009C2C85 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE63290EAF58009C2C85 /* HttpMethod.swift */; };
+		60A3EE66290EB312009C2C85 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE65290EB312009C2C85 /* Endpoint.swift */; };
+		60A3EE68290EBBC2009C2C85 /* MatchesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE67290EBBC2009C2C85 /* MatchesListService.swift */; };
+		60A3EE6C290EBC7E009C2C85 /* MatchesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE6B290EBC7E009C2C85 /* MatchesList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +47,12 @@
 		60A3EE54290EA74D009C2C85 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		60A3EE56290EA772009C2C85 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		60A3EE58290EA825009C2C85 /* MatchesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListCoordinator.swift; sourceTree = "<group>"; };
+		60A3EE5F290EAAD9009C2C85 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		60A3EE61290EAF4D009C2C85 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		60A3EE63290EAF58009C2C85 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		60A3EE65290EB312009C2C85 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		60A3EE67290EBBC2009C2C85 /* MatchesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListService.swift; sourceTree = "<group>"; };
+		60A3EE6B290EBC7E009C2C85 /* MatchesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +97,8 @@
 				60A3EE5C290EAA04009C2C85 /* Resources */,
 				60A3EE53290EA73F009C2C85 /* Coordinators */,
 				60A3EE5A290EA975009C2C85 /* Scenes */,
+				60A3EE6A290EBBE8009C2C85 /* Models */,
+				60A3EE5D290EAAB0009C2C85 /* Service */,
 			);
 			path = CSTV;
 			sourceTree = "<group>";
@@ -133,6 +147,34 @@
 				60A3EE31290EA17B009C2C85 /* Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		60A3EE5D290EAAB0009C2C85 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				60A3EE5E290EAAB9009C2C85 /* Network */,
+				60A3EE67290EBBC2009C2C85 /* MatchesListService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		60A3EE5E290EAAB9009C2C85 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				60A3EE5F290EAAD9009C2C85 /* NetworkService.swift */,
+				60A3EE63290EAF58009C2C85 /* HttpMethod.swift */,
+				60A3EE61290EAF4D009C2C85 /* NetworkError.swift */,
+				60A3EE65290EB312009C2C85 /* Endpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		60A3EE6A290EBBE8009C2C85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				60A3EE6B290EBC7E009C2C85 /* MatchesList.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,11 +278,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				60A3EE55290EA74D009C2C85 /* Coordinator.swift in Sources */,
+				60A3EE62290EAF4D009C2C85 /* NetworkError.swift in Sources */,
 				60A3EE28290EA176009C2C85 /* MatchesListViewController.swift in Sources */,
 				60A3EE59290EA825009C2C85 /* MatchesListCoordinator.swift in Sources */,
+				60A3EE66290EB312009C2C85 /* Endpoint.swift in Sources */,
+				60A3EE64290EAF58009C2C85 /* HttpMethod.swift in Sources */,
 				60A3EE57290EA772009C2C85 /* AppCoordinator.swift in Sources */,
+				60A3EE68290EBBC2009C2C85 /* MatchesListService.swift in Sources */,
 				60A3EE24290EA176009C2C85 /* AppDelegate.swift in Sources */,
+				60A3EE6C290EBC7E009C2C85 /* MatchesList.swift in Sources */,
 				60A3EE26290EA176009C2C85 /* SceneDelegate.swift in Sources */,
+				60A3EE60290EAAD9009C2C85 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
