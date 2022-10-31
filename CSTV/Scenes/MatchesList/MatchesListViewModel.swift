@@ -22,12 +22,12 @@ protocol MatchesListDelegate: AnyObject {
 final class MatchesListViewModel: MatchesListViewModelOutput {
     var matchesList: [Match] = []
     private let matchesListService: MatchesListNetworking
- //   private let teamDetailsService: TeamDetailsNetworking
+    //   private let teamDetailsService: TeamDetailsNetworking
     weak var delegate: MatchesListDelegate?
 
     init(matchesListService: MatchesListNetworking) {
         self.matchesListService = matchesListService
-      //  self.teamDetailsService = teamDetailsService
+        //  self.teamDetailsService = teamDetailsService
     }
 
     func fetchData(page: Int) {
@@ -51,7 +51,7 @@ final class MatchesListViewModel: MatchesListViewModelOutput {
         }
     }
 
-//    func fetchTeamDetails() {
-//        teamDetailsService.fetchTeamDetails(teamSlug: <#T##String#>, completion: <#T##((Result<[TeamDetails], NetworkError>) -> Void)##((Result<[TeamDetails], NetworkError>) -> Void)##(Result<[TeamDetails], NetworkError>) -> Void#>)
-//    }
+    //    func fetchTeamDetails() {
+    //        teamDetailsService.fetchTeamDetails(teamSlug: <#T##String#>, completion: <#T##((Result<[TeamDetails], NetworkError>) -> Void)##((Result<[TeamDetails], NetworkError>) -> Void)##(Result<[TeamDetails], NetworkError>) -> Void#>)
+    //    }
 }

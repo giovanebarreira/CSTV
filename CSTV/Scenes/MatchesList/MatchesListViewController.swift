@@ -40,10 +40,10 @@ final class MatchesListViewController: UIViewController {
         view.addSubview(tableView)
 
         NSLayoutConstraint.activate([
-          tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-          tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-          tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-          tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 
@@ -52,55 +52,74 @@ final class MatchesListViewController: UIViewController {
 
 extension MatchesListViewController: MatchesListDelegate {
     private func alertCallBack() {
-      self.viewModel.fetchData(page: self.currentPage)
+        self.viewModel.fetchData(page: self.currentPage)
     }
 
     func displayMatchesList() {
+        if isFetchingData {
+            isFetchingData = false
+        }
 
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     func showSpinner(_ isLoading: Bool) {
-
+        DispatchQueue.main.async {
+            if !self.isFetchingData {
+                isLoading ? self.showSpinner() : self.removeSpinner()
+            }
+        }
     }
 
     func didFail(error: String) {
         DispatchQueue.main.async {
-          self.showAlert(errorMessage: error, callback: self.alertCallBack)
+            self.showAlert(errorMessage: error, callback: self.alertCallBack)
         }
     }
 }
 
 extension MatchesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.matchesList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MatchesListCell.reuseId, for: indexPath) as? MatchesListCell else { return UITableViewCell() }
+
+
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      tableView.deselectRow(at: indexPath, animated: true)
+     // let selectedMovie = viewModel.homeListDisplay[indexPath.row]
+      //  coordinatorDelegate?.goToMovieDetails(selectedMovie: selectedMovie)
     }
 }
 
 extension MatchesListViewController: UIScrollViewDelegate {
-  func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-    if isFetchingData {
-      self.tableView.tableFooterView = spinnerFooter()
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if isFetchingData {
+            self.tableView.tableFooterView = spinnerFooter()
+        }
+
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let seventyPercenteOfContentHeight = contentHeight * 0.7
+        
+        if offsetY > seventyPercenteOfContentHeight {
+            if !isFetchingData {
+                beginBatchFetch()
+            }
+        }
     }
 
-    let offsetY = scrollView.contentOffset.y
-    let contentHeight = scrollView.contentSize.height
-    let seventyPercenteOfContentHeight = contentHeight * 0.7
-
-    if offsetY > seventyPercenteOfContentHeight {
-      if !isFetchingData {
-        beginBatchFetch()
-      }
+    func beginBatchFetch() {
+        currentPage += 1
+        isFetchingData = true
+        viewModel.fetchData(page: currentPage)
     }
-  }
-
-  func beginBatchFetch() {
-    currentPage += 1
-    isFetchingData = true
-    viewModel.fetchData(page: currentPage)
-  }
 }
 
