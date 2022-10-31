@@ -21,9 +21,13 @@
 		60A3EE64290EAF58009C2C85 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE63290EAF58009C2C85 /* HttpMethod.swift */; };
 		60A3EE66290EB312009C2C85 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE65290EB312009C2C85 /* Endpoint.swift */; };
 		60A3EE68290EBBC2009C2C85 /* MatchesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE67290EBBC2009C2C85 /* MatchesListService.swift */; };
-		60A3EE6C290EBC7E009C2C85 /* MatchesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE6B290EBC7E009C2C85 /* MatchesList.swift */; };
+		60A3EE6C290EBC7E009C2C85 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE6B290EBC7E009C2C85 /* Match.swift */; };
 		60A3EE6E290EE370009C2C85 /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE6D290EE370009C2C85 /* TeamDetails.swift */; };
 		60A3EE70290EE4BD009C2C85 /* TeamDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE6F290EE4BD009C2C85 /* TeamDetailsService.swift */; };
+		60B827F5290FD4A9005A70F3 /* MatchesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B827F4290FD4A9005A70F3 /* MatchesListViewModel.swift */; };
+		60B827F8290FE0D4005A70F3 /* UIViewController+Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B827F7290FE0D4005A70F3 /* UIViewController+Spinner.swift */; };
+		60B827FB290FE10B005A70F3 /* MatchesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B827FA290FE10B005A70F3 /* MatchesListCell.swift */; };
+		60B827FD290FE2A7005A70F3 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B827FC290FE2A7005A70F3 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +58,13 @@
 		60A3EE63290EAF58009C2C85 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		60A3EE65290EB312009C2C85 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		60A3EE67290EBBC2009C2C85 /* MatchesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListService.swift; sourceTree = "<group>"; };
-		60A3EE6B290EBC7E009C2C85 /* MatchesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesList.swift; sourceTree = "<group>"; };
+		60A3EE6B290EBC7E009C2C85 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		60A3EE6D290EE370009C2C85 /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
 		60A3EE6F290EE4BD009C2C85 /* TeamDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsService.swift; sourceTree = "<group>"; };
+		60B827F4290FD4A9005A70F3 /* MatchesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListViewModel.swift; sourceTree = "<group>"; };
+		60B827F7290FE0D4005A70F3 /* UIViewController+Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Spinner.swift"; sourceTree = "<group>"; };
+		60B827FA290FE10B005A70F3 /* MatchesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListCell.swift; sourceTree = "<group>"; };
+		60B827FC290FE2A7005A70F3 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,7 @@
 		60A3EE22290EA176009C2C85 /* CSTV */ = {
 			isa = PBXGroup;
 			children = (
+				60B827F6290FE0C6005A70F3 /* Helpers */,
 				60A3EE5C290EAA04009C2C85 /* Resources */,
 				60A3EE53290EA73F009C2C85 /* Coordinators */,
 				60A3EE5A290EA975009C2C85 /* Scenes */,
@@ -136,7 +145,9 @@
 		60A3EE5B290EA98A009C2C85 /* MatchesList */ = {
 			isa = PBXGroup;
 			children = (
+				60B827F9290FE0F4005A70F3 /* Cell */,
 				60A3EE27290EA176009C2C85 /* MatchesListViewController.swift */,
+				60B827F4290FD4A9005A70F3 /* MatchesListViewModel.swift */,
 			);
 			path = MatchesList;
 			sourceTree = "<group>";
@@ -177,10 +188,27 @@
 		60A3EE6A290EBBE8009C2C85 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				60A3EE6B290EBC7E009C2C85 /* MatchesList.swift */,
+				60A3EE6B290EBC7E009C2C85 /* Match.swift */,
 				60A3EE6D290EE370009C2C85 /* TeamDetails.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		60B827F6290FE0C6005A70F3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				60B827F7290FE0D4005A70F3 /* UIViewController+Spinner.swift */,
+				60B827FC290FE2A7005A70F3 /* UIViewController+Alert.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		60B827F9290FE0F4005A70F3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				60B827FA290FE10B005A70F3 /* MatchesListCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,17 +311,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60B827F8290FE0D4005A70F3 /* UIViewController+Spinner.swift in Sources */,
 				60A3EE6E290EE370009C2C85 /* TeamDetails.swift in Sources */,
+				60B827F5290FD4A9005A70F3 /* MatchesListViewModel.swift in Sources */,
 				60A3EE55290EA74D009C2C85 /* Coordinator.swift in Sources */,
 				60A3EE62290EAF4D009C2C85 /* NetworkError.swift in Sources */,
 				60A3EE28290EA176009C2C85 /* MatchesListViewController.swift in Sources */,
 				60A3EE59290EA825009C2C85 /* MatchesListCoordinator.swift in Sources */,
 				60A3EE66290EB312009C2C85 /* Endpoint.swift in Sources */,
 				60A3EE64290EAF58009C2C85 /* HttpMethod.swift in Sources */,
+				60B827FD290FE2A7005A70F3 /* UIViewController+Alert.swift in Sources */,
 				60A3EE57290EA772009C2C85 /* AppCoordinator.swift in Sources */,
 				60A3EE68290EBBC2009C2C85 /* MatchesListService.swift in Sources */,
+				60B827FB290FE10B005A70F3 /* MatchesListCell.swift in Sources */,
 				60A3EE24290EA176009C2C85 /* AppDelegate.swift in Sources */,
-				60A3EE6C290EBC7E009C2C85 /* MatchesList.swift in Sources */,
+				60A3EE6C290EBC7E009C2C85 /* Match.swift in Sources */,
 				60A3EE70290EE4BD009C2C85 /* TeamDetailsService.swift in Sources */,
 				60A3EE26290EA176009C2C85 /* SceneDelegate.swift in Sources */,
 				60A3EE60290EAAD9009C2C85 /* NetworkService.swift in Sources */,

@@ -19,7 +19,10 @@ final class MatchesListCoordinator: Coordinator {
     }
 
     func start() {
-        let viewController = MatchesListViewController()
+        let service = NetworkService()
+        let matchesListservice = MatchesListService(service: service)
+        let viewModel = MatchesListViewModel(matchesListService: matchesListservice)
+        let viewController = MatchesListViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: true)
     }
 }

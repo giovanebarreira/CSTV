@@ -22,7 +22,6 @@ struct NetworkService: Networking {
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
         request.allHTTPHeaderFields = headers
         request.httpMethod = method.rawValue
-        print("URL>>>", url)
         URLSession.shared.dataTask(with: request) { data, response, error in
             do {
                 guard let data = data else {
@@ -35,8 +34,7 @@ struct NetworkService: Networking {
 
                 let json = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(json))
-            } catch (let error){
-                print(error.localizedDescription)
+            } catch {
                 completion(.failure(.decodingError))
             }
         }

@@ -1,5 +1,5 @@
 //
-//  MatchesList.swift
+//  Match.swift
 //  CSTV
 //
 //  Created by Giovane Barreira on 30/10/22.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UpcomingMatches: Codable {
+struct Match: Codable {
     let beginAt: String
     let league: League
     let competitors: [Competitors]
@@ -21,7 +21,6 @@ struct UpcomingMatches: Codable {
         case serie
     }
 }
-
 
 struct League: Codable {
     let id: Int

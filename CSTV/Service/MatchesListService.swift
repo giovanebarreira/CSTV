@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MatchesListNetworking {
-    typealias MatchesList = ((Result<[UpcomingMatches], NetworkError>) -> Void)
+    typealias MatchesList = ((Result<[Match], NetworkError>) -> Void)
     func fetchMatches(page: Int, completion: @escaping MatchesList)
 }
 
