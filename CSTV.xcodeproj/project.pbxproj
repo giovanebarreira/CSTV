@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		608282B72911323F007C7F49 /* LeagueComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282B62911323F007C7F49 /* LeagueComponent.swift */; };
+		608282B9291135A2007C7F49 /* UIView+roundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282B8291135A2007C7F49 /* UIView+roundCorners.swift */; };
 		60A3EE24290EA176009C2C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE23290EA176009C2C85 /* AppDelegate.swift */; };
 		60A3EE26290EA176009C2C85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE25290EA176009C2C85 /* SceneDelegate.swift */; };
 		60A3EE28290EA176009C2C85 /* MatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE27290EA176009C2C85 /* MatchesListViewController.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		608282B62911323F007C7F49 /* LeagueComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueComponent.swift; sourceTree = "<group>"; };
+		608282B8291135A2007C7F49 /* UIView+roundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+roundCorners.swift"; sourceTree = "<group>"; };
 		60A3EE20290EA176009C2C85 /* CSTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A3EE23290EA176009C2C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A3EE25290EA176009C2C85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				60B827F7290FE0D4005A70F3 /* UIViewController+Spinner.swift */,
 				60B827FC290FE2A7005A70F3 /* UIViewController+Alert.swift */,
 				60B82801290FF06E005A70F3 /* UIColor.swift */,
+				608282B8291135A2007C7F49 /* UIView+roundCorners.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				60A3EE6C290EBC7E009C2C85 /* Match.swift in Sources */,
 				60A3EE70290EE4BD009C2C85 /* TeamDetailsService.swift in Sources */,
 				60A3EE26290EA176009C2C85 /* SceneDelegate.swift in Sources */,
+				608282B9291135A2007C7F49 /* UIView+roundCorners.swift in Sources */,
 				60A3EE60290EAAD9009C2C85 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +522,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -547,6 +552,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -66,7 +66,7 @@ final class MatchesListCell: UITableViewCell {
     private func makeLabel(with text: String) -> UILabel {
         let teamLabel = UILabel()
         teamLabel.translatesAutoresizingMaskIntoConstraints = false
-        teamLabel.font = .preferredFont(forTextStyle: .caption1)
+        teamLabel.font = .systemFont(ofSize: 8)
         teamLabel.textColor = .title
         teamLabel.text = text
         return teamLabel
@@ -99,6 +99,8 @@ final class MatchesListCell: UITableViewCell {
         return view
     }()
 
+    private var timeView = TimeView(timeString: "hoje, 22:00", isNow: true)
+
     private var leagueComponent = LeagueComponent(badgeImage: UIImage(systemName: "photo")!, leagueName: "League + serie")
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -111,20 +113,16 @@ final class MatchesListCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    
-
     private func setup() {
         contentView.backgroundColor = .background
         contentView.addSubview(baseView)
+        baseView.addSubview(timeView)
         baseView.addSubview(stackView)
         stackView.addArrangedSubview(team1)
         stackView.addArrangedSubview(versusLabel)
         stackView.addArrangedSubview(team2)
         baseView.addSubview(divider)
         baseView.addSubview(leagueComponent)
-
-     // TODO: remove
-        stackView.backgroundColor = .lightGray
     }
 
     private func setupViewLayout() {
@@ -134,6 +132,14 @@ final class MatchesListCell: UITableViewCell {
             baseView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 3),
             trailingAnchor.constraint(equalToSystemSpacingAfter: baseView.trailingAnchor, multiplier: 3),
             bottomAnchor.constraint(equalToSystemSpacingBelow: baseView.bottomAnchor, multiplier: 0)
+        ])
+
+        // Time view
+        NSLayoutConstraint.activate([
+            timeView.topAnchor.constraint(equalToSystemSpacingBelow: baseView.topAnchor, multiplier: 0),
+            baseView.trailingAnchor.constraint(equalToSystemSpacingAfter: timeView.trailingAnchor, multiplier: 0),
+            timeView.widthAnchor.constraint(equalToConstant: 58),
+            timeView.heightAnchor.constraint(equalToConstant: 28)
         ])
 
         // Stack view
@@ -163,3 +169,37 @@ final class MatchesListCell: UITableViewCell {
 }
 
 
+class TimeView: UIStackView {
+    private let timeString: String
+    private let isNow: Bool
+
+    private var timeLabel: UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 8)
+        label.text = timeString
+        label.textColor = .title
+        return label
+    }
+
+    init(timeString: String, isNow: Bool) {
+        self.timeString = timeString
+        self.isNow = isNow
+        super.init(frame: .zero)
+        self.backgroundColor = .scheduleTime
+        translatesAutoresizingMaskIntoConstraints = false
+        axis = .vertical
+        alignment = .center
+
+        addArrangedSubview(timeLabel)
+    }
+
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.roundCorners(corners: [.bottomLeft, .topRight], radius: 16)
+    }
+}

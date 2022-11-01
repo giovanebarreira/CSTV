@@ -36,7 +36,7 @@ class LeagueComponent: UIView {
     private var leagueText: UILabel {
         let league = UILabel()
         league.translatesAutoresizingMaskIntoConstraints = false
-        league.font = .preferredFont(forTextStyle: .caption1)
+        league.font = .systemFont(ofSize: 8)
         league.textColor = .title
         league.text = leagueName
         return league
