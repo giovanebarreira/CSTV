@@ -50,8 +50,4 @@ final class MatchesListViewModel: MatchesListViewModelOutput {
             self?.delegate?.showSpinner(false)
         }
     }
-
-    //    func fetchTeamDetails() {
-    //        teamDetailsService.fetchTeamDetails(teamSlug: <#T##String#>, completion: <#T##((Result<[TeamDetails], NetworkError>) -> Void)##((Result<[TeamDetails], NetworkError>) -> Void)##(Result<[TeamDetails], NetworkError>) -> Void#>)
-    //    }
 }

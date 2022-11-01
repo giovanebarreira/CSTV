@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		608282B72911323F007C7F49 /* LeagueComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282B62911323F007C7F49 /* LeagueComponent.swift */; };
 		60A3EE24290EA176009C2C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE23290EA176009C2C85 /* AppDelegate.swift */; };
 		60A3EE26290EA176009C2C85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE25290EA176009C2C85 /* SceneDelegate.swift */; };
 		60A3EE28290EA176009C2C85 /* MatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE27290EA176009C2C85 /* MatchesListViewController.swift */; };
@@ -28,6 +29,8 @@
 		60B827F8290FE0D4005A70F3 /* UIViewController+Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B827F7290FE0D4005A70F3 /* UIViewController+Spinner.swift */; };
 		60B827FB290FE10B005A70F3 /* MatchesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B827FA290FE10B005A70F3 /* MatchesListCell.swift */; };
 		60B827FD290FE2A7005A70F3 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B827FC290FE2A7005A70F3 /* UIViewController+Alert.swift */; };
+		60B82800290FE4B6005A70F3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 60B827FF290FE4B6005A70F3 /* Kingfisher */; };
+		60B82802290FF06E005A70F3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B82801290FF06E005A70F3 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		608282B62911323F007C7F49 /* LeagueComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueComponent.swift; sourceTree = "<group>"; };
 		60A3EE20290EA176009C2C85 /* CSTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A3EE23290EA176009C2C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A3EE25290EA176009C2C85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 		60B827F7290FE0D4005A70F3 /* UIViewController+Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Spinner.swift"; sourceTree = "<group>"; };
 		60B827FA290FE10B005A70F3 /* MatchesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListCell.swift; sourceTree = "<group>"; };
 		60B827FC290FE2A7005A70F3 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		60B82801290FF06E005A70F3 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60B82800290FE4B6005A70F3 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		608282B52911321E007C7F49 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				608282B62911323F007C7F49 /* LeagueComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		60A3EE17290EA176009C2C85 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +151,7 @@
 		60A3EE5A290EA975009C2C85 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				608282B52911321E007C7F49 /* Components */,
 				60A3EE5B290EA98A009C2C85 /* MatchesList */,
 			);
 			path = Scenes;
@@ -199,6 +214,7 @@
 			children = (
 				60B827F7290FE0D4005A70F3 /* UIViewController+Spinner.swift */,
 				60B827FC290FE2A7005A70F3 /* UIViewController+Alert.swift */,
+				60B82801290FF06E005A70F3 /* UIColor.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -227,6 +243,9 @@
 			dependencies = (
 			);
 			name = CSTV;
+			packageProductDependencies = (
+				60B827FF290FE4B6005A70F3 /* Kingfisher */,
+			);
 			productName = CSTV;
 			productReference = 60A3EE20290EA176009C2C85 /* CSTV.app */;
 			productType = "com.apple.product-type.application";
@@ -277,6 +296,9 @@
 				Base,
 			);
 			mainGroup = 60A3EE17290EA176009C2C85;
+			packageReferences = (
+				60B827FE290FE4B6005A70F3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 60A3EE21290EA176009C2C85 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -321,7 +343,9 @@
 				60A3EE66290EB312009C2C85 /* Endpoint.swift in Sources */,
 				60A3EE64290EAF58009C2C85 /* HttpMethod.swift in Sources */,
 				60B827FD290FE2A7005A70F3 /* UIViewController+Alert.swift in Sources */,
+				608282B72911323F007C7F49 /* LeagueComponent.swift in Sources */,
 				60A3EE57290EA772009C2C85 /* AppCoordinator.swift in Sources */,
+				60B82802290FF06E005A70F3 /* UIColor.swift in Sources */,
 				60A3EE68290EBBC2009C2C85 /* MatchesListService.swift in Sources */,
 				60B827FB290FE10B005A70F3 /* MatchesListCell.swift in Sources */,
 				60A3EE24290EA176009C2C85 /* AppDelegate.swift in Sources */,
@@ -490,9 +514,10 @@
 				INFOPLIST_FILE = CSTV/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -518,9 +543,10 @@
 				INFOPLIST_FILE = CSTV/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,6 +631,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		60B827FE290FE4B6005A70F3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		60B827FF290FE4B6005A70F3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60B827FE290FE4B6005A70F3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 60A3EE18290EA176009C2C85 /* Project object */;
 }

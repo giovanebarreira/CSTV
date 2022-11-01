@@ -17,25 +17,28 @@ final class MatchesListViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         title = "Partidas"
+        view.backgroundColor = .background
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.fetchData(page: currentPage)
+        setupTableView()
     }
 
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-
         tableView.register(MatchesListCell.self, forCellReuseIdentifier: MatchesListCell.reuseId)
-        tableView.rowHeight = MatchesListCell.estimatedRowHeight
 
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .background
+        tableView.rowHeight = MatchesListCell.estimatedRowHeight
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
 
@@ -56,19 +59,19 @@ extension MatchesListViewController: MatchesListDelegate {
     }
 
     func displayMatchesList() {
-        if isFetchingData {
-            isFetchingData = false
-        }
-
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+//        if isFetchingData {
+//            isFetchingData = false
+//        }
+//
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
     }
 
     func showSpinner(_ isLoading: Bool) {
         DispatchQueue.main.async {
             if !self.isFetchingData {
-                isLoading ? self.showSpinner() : self.removeSpinner()
+               // isLoading ? self.showSpinner() : self.removeSpinner()
             }
         }
     }
@@ -82,7 +85,8 @@ extension MatchesListViewController: MatchesListDelegate {
 
 extension MatchesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.matchesList.count
+//        return viewModel.matchesList.count
+        return 10
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,27 +103,27 @@ extension MatchesListViewController: UITableViewDelegate, UITableViewDataSource 
     }
 }
 
-extension MatchesListViewController: UIScrollViewDelegate {
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if isFetchingData {
-            self.tableView.tableFooterView = spinnerFooter()
-        }
-
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let seventyPercenteOfContentHeight = contentHeight * 0.7
-        
-        if offsetY > seventyPercenteOfContentHeight {
-            if !isFetchingData {
-                beginBatchFetch()
-            }
-        }
-    }
-
-    func beginBatchFetch() {
-        currentPage += 1
-        isFetchingData = true
-        viewModel.fetchData(page: currentPage)
-    }
-}
-
+//extension MatchesListViewController: UIScrollViewDelegate {
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        if isFetchingData {
+//            self.tableView.tableFooterView = spinnerFooter()
+//        }
+//
+//        let offsetY = scrollView.contentOffset.y
+//        let contentHeight = scrollView.contentSize.height
+//        let seventyPercenteOfContentHeight = contentHeight * 0.7
+//
+//        if offsetY > seventyPercenteOfContentHeight {
+//            if !isFetchingData {
+//                beginBatchFetch()
+//            }
+//        }
+//    }
+//
+//    func beginBatchFetch() {
+//        currentPage += 1
+//        isFetchingData = true
+//        viewModel.fetchData(page: currentPage)
+//    }
+//}
+//
