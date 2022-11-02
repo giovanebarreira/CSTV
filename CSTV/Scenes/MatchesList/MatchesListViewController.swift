@@ -26,9 +26,16 @@ final class MatchesListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         viewModel.delegate = self
         viewModel.fetchData(page: currentPage)
-        setupTableView()
+
+        print("2022-11-02T11:30:00Z".dayMonthHour, "<<<<<<<")
+        print("2022-11-02T11:30:00Z".weekDayHour, "<<<<<<<")
+        print("2022-11-02T11:30:00Z".isToday, "<<<<<<<")
+        print("2022-11-02T11:30:00Z".isTomorrow, "<<<<<<<")
+        print("2022-11-02T12:30:00Z".isNow, "<<<<<<<")
+        
     }
 
     func setupTableView() {
@@ -49,8 +56,6 @@ final class MatchesListViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-
-
 }
 
 extension MatchesListViewController: MatchesListDelegate {
@@ -59,19 +64,19 @@ extension MatchesListViewController: MatchesListDelegate {
     }
 
     func displayMatchesList() {
-//        if isFetchingData {
-//            isFetchingData = false
-//        }
-//
-//        DispatchQueue.main.async {
-//            self.tableView.reloadData()
-//        }
+        if isFetchingData {
+            isFetchingData = false
+        }
+
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     func showSpinner(_ isLoading: Bool) {
         DispatchQueue.main.async {
             if !self.isFetchingData {
-               // isLoading ? self.showSpinner() : self.removeSpinner()
+                isLoading ? self.showSpinner() : self.removeSpinner()
             }
         }
     }
@@ -85,14 +90,14 @@ extension MatchesListViewController: MatchesListDelegate {
 
 extension MatchesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return viewModel.matchesList.count
-        return 10
+        return viewModel.matchesList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MatchesListCell.reuseId, for: indexPath) as? MatchesListCell else { return UITableViewCell() }
 
-
+        let matchResult = viewModel.matchesList[indexPath.row]
+        cell.configure(match: matchResult)
         return cell
     }
 
@@ -103,27 +108,27 @@ extension MatchesListViewController: UITableViewDelegate, UITableViewDataSource 
     }
 }
 
-//extension MatchesListViewController: UIScrollViewDelegate {
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        if isFetchingData {
-//            self.tableView.tableFooterView = spinnerFooter()
-//        }
-//
-//        let offsetY = scrollView.contentOffset.y
-//        let contentHeight = scrollView.contentSize.height
-//        let seventyPercenteOfContentHeight = contentHeight * 0.7
-//
-//        if offsetY > seventyPercenteOfContentHeight {
-//            if !isFetchingData {
-//                beginBatchFetch()
-//            }
-//        }
-//    }
-//
-//    func beginBatchFetch() {
-//        currentPage += 1
-//        isFetchingData = true
-//        viewModel.fetchData(page: currentPage)
-//    }
-//}
-//
+extension MatchesListViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if isFetchingData {
+            self.tableView.tableFooterView = spinnerFooter()
+        }
+
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let seventyPercenteOfContentHeight = contentHeight * 0.7
+
+        if offsetY > seventyPercenteOfContentHeight {
+            if !isFetchingData {
+                beginBatchFetch()
+            }
+        }
+    }
+
+    func beginBatchFetch() {
+        currentPage += 1
+        isFetchingData = true
+        viewModel.fetchData(page: currentPage)
+    }
+}
+

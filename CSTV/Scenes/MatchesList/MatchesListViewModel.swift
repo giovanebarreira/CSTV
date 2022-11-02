@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MatchesListViewModelOutput {
-    var matchesList: [Match] { get }
+    var matchesList: [MatchesListDisplay] { get }
     var delegate: MatchesListDelegate? { get set }
     func fetchData(page: Int)
 }
@@ -20,7 +20,7 @@ protocol MatchesListDelegate: AnyObject {
 }
 
 final class MatchesListViewModel: MatchesListViewModelOutput {
-    var matchesList: [Match] = []
+    var matchesList: [MatchesListDisplay] = []
     private let matchesListService: MatchesListNetworking
     //   private let teamDetailsService: TeamDetailsNetworking
     weak var delegate: MatchesListDelegate?
@@ -32,7 +32,11 @@ final class MatchesListViewModel: MatchesListViewModelOutput {
 
     func fetchData(page: Int) {
         fetchMatchesList(page: page) { [weak self] listResult in
-            self?.matchesList = listResult ?? []
+            guard let listResult = listResult else { return }
+            listResult.forEach { match in
+                self?.matchesList.append(MatchesListDisplay(match: match))
+            }
+            self?.delegate?.displayMatchesList()
         }
     }
 

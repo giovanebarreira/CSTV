@@ -12,6 +12,14 @@ final class MatchesListCell: UITableViewCell {
     static let reuseId = "MatchesListCell"
     static let estimatedRowHeight: CGFloat = 200
 
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     private let baseView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -41,57 +49,6 @@ final class MatchesListCell: UITableViewCell {
         return titleLbl
     }()
 
-    private func badgeStackView() -> UIStackView {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.distribution = .equalSpacing
-        stack.alignment = .center
-        stack.spacing = 10
-        stack.backgroundColor = .clear
-        return stack
-    }
-
-    private func badgeImage(teamImage: UIImage) -> UIImageView {
-        let badgeImage = UIImageView()
-        badgeImage.translatesAutoresizingMaskIntoConstraints = false
-        badgeImage.contentMode = .scaleAspectFit
-        badgeImage.layer.cornerRadius = badgeImage.frame.height/2
-        badgeImage.clipsToBounds = true
-        badgeImage.image = teamImage
-        badgeImage.backgroundColor = .systemBackground
-        return badgeImage
-    }
-
-    private func makeLabel(with text: String) -> UILabel {
-        let teamLabel = UILabel()
-        teamLabel.translatesAutoresizingMaskIntoConstraints = false
-        teamLabel.font = .systemFont(ofSize: 8)
-        teamLabel.textColor = .title
-        teamLabel.text = text
-        return teamLabel
-    }
-
-    private var team1: UIStackView {
-        let badge = badgeImage(teamImage: UIImage(systemName: "person")!)
-        let name = makeLabel(with: "Time 1")
-        let stackView = badgeStackView()
-
-        stackView.addArrangedSubview(badge)
-        stackView.addArrangedSubview(name)
-        return stackView
-    }
-
-    private var team2: UIStackView {
-        let badge = badgeImage(teamImage: UIImage(systemName: "person")!)
-        let name = makeLabel(with: "Time 2")
-        let stackView = badgeStackView()
-
-        stackView.addArrangedSubview(badge)
-        stackView.addArrangedSubview(name)
-        return stackView
-    }
-
     private var divider: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -99,33 +56,33 @@ final class MatchesListCell: UITableViewCell {
         return view
     }()
 
+
+    func configure(match: MatchesListDisplay) {
+        let team1 = BadgeComponent(teamImage: UIImage(systemName: "person")!, name: match.competitors.first!.opponent.name)
+        setupViewLayout(team1: team1)
+    }
+
     private var timeView = TimeView(timeString: "hoje, 22:00", isNow: true)
+  //  private var team1 = BadgeComponent(teamImage: UIImage(systemName: "person")!, name: "lal")
+    private var team2 = BadgeComponent(teamImage: UIImage(systemName: "person")!, name: "lal")
 
     private var leagueComponent = LeagueComponent(badgeImage: UIImage(systemName: "photo")!, leagueName: "League + serie")
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setup()
-        setupViewLayout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     private func setup() {
         contentView.backgroundColor = .background
         contentView.addSubview(baseView)
         baseView.addSubview(timeView)
         baseView.addSubview(stackView)
-        stackView.addArrangedSubview(team1)
+    //    stackView.addArrangedSubview(team1)
         stackView.addArrangedSubview(versusLabel)
         stackView.addArrangedSubview(team2)
         baseView.addSubview(divider)
         baseView.addSubview(leagueComponent)
     }
-
-    private func setupViewLayout() {
+        
+    private func setupViewLayout(team1: BadgeComponent) {
+        setup()
+        stackView.addArrangedSubview(team1)
         // Base view
         NSLayoutConstraint.activate([
             baseView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 3),
@@ -165,41 +122,5 @@ final class MatchesListCell: UITableViewCell {
             baseView.trailingAnchor.constraint(equalToSystemSpacingAfter: leagueComponent.trailingAnchor, multiplier: 0),
             baseView.bottomAnchor.constraint(equalToSystemSpacingBelow: leagueComponent.bottomAnchor, multiplier: 2)
         ])
-    }
-}
-
-
-class TimeView: UIStackView {
-    private let timeString: String
-    private let isNow: Bool
-
-    private var timeLabel: UILabel {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 8)
-        label.text = timeString
-        label.textColor = .title
-        return label
-    }
-
-    init(timeString: String, isNow: Bool) {
-        self.timeString = timeString
-        self.isNow = isNow
-        super.init(frame: .zero)
-        self.backgroundColor = .scheduleTime
-        translatesAutoresizingMaskIntoConstraints = false
-        axis = .vertical
-        alignment = .center
-
-        addArrangedSubview(timeLabel)
-    }
-
-    required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.roundCorners(corners: [.bottomLeft, .topRight], radius: 16)
     }
 }

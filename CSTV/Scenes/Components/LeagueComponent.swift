@@ -8,8 +8,23 @@
 import UIKit
 
 class LeagueComponent: UIView {
-    private let badgeImage: UIImage
-    private let leagueName: String
+    var badgeImage: UIImage
+    var leagueName: String
+
+    init(badgeImage: UIImage, leagueName: String) {
+        self.badgeImage = badgeImage
+        self.leagueName = leagueName
+        super.init(frame: .zero)
+
+        addSubview(leagueStackView)
+        leagueStackView.addArrangedSubview(badgeImageView)
+        leagueStackView.addArrangedSubview(leagueText)
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     private let leagueStackView: UIStackView = {
         let stack = UIStackView()
@@ -40,20 +55,5 @@ class LeagueComponent: UIView {
         league.textColor = .title
         league.text = leagueName
         return league
-    }
-
-    init(badgeImage: UIImage, leagueName: String) {
-        self.badgeImage = badgeImage
-        self.leagueName = leagueName
-        super.init(frame: .zero)
-
-        addSubview(leagueStackView)
-        leagueStackView.addArrangedSubview(badgeImageView)
-        leagueStackView.addArrangedSubview(leagueText)
-        self.translatesAutoresizingMaskIntoConstraints = false
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
