@@ -9,17 +9,17 @@ import UIKit
 
 final class TeamDetailsCoordinator: Coordinator {
     var navigationController: UINavigationController
-    let competitors: [Competitors]
+    let selectedMatch: MatchesListDisplay
 
-    init(navigationController: UINavigationController, competitors: [Competitors]) {
+    init(navigationController: UINavigationController, selectedMatch: MatchesListDisplay) {
         self.navigationController = navigationController
-        self.competitors = competitors
+        self.selectedMatch = selectedMatch
     }
 
     func start() {
         let networkService = NetworkService()
         let service = TeamDetailsService(service: networkService)
-        let viewModel = TeamDetailsViewModel(service: service, competitors: competitors)
+        let viewModel = TeamDetailsViewModel(service: service, selectedMatch: selectedMatch)
         let viewController = TeamDetailsViewController(viewModel: viewModel)
         
         navigationController.pushViewController(viewController, animated: true)

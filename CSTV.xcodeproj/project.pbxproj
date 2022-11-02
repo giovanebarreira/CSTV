@@ -39,6 +39,7 @@
 		60B827FD290FE2A7005A70F3 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B827FC290FE2A7005A70F3 /* UIViewController+Alert.swift */; };
 		60B82800290FE4B6005A70F3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 60B827FF290FE4B6005A70F3 /* Kingfisher */; };
 		60B82802290FF06E005A70F3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B82801290FF06E005A70F3 /* UIColor.swift */; };
+		60C9DE6E2912FF18007C1D05 /* TeamDetailsDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C9DE6D2912FF18007C1D05 /* TeamDetailsDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		60B827FA290FE10B005A70F3 /* MatchesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListCell.swift; sourceTree = "<group>"; };
 		60B827FC290FE2A7005A70F3 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		60B82801290FF06E005A70F3 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		60C9DE6D2912FF18007C1D05 /* TeamDetailsDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 				60A3EE6B290EBC7E009C2C85 /* Match.swift */,
 				60A3EE6D290EE370009C2C85 /* TeamDetails.swift */,
 				601168DA2912860000BC4EB9 /* MatchesListDisplay.swift */,
+				60C9DE6D2912FF18007C1D05 /* TeamDetailsDisplay.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				602A80B32912EC1D0081A35A /* TeamDetailsViewModel.swift in Sources */,
 				60A3EE66290EB312009C2C85 /* Endpoint.swift in Sources */,
 				60A3EE64290EAF58009C2C85 /* HttpMethod.swift in Sources */,
+				60C9DE6E2912FF18007C1D05 /* TeamDetailsDisplay.swift in Sources */,
 				60B827FD290FE2A7005A70F3 /* UIViewController+Alert.swift in Sources */,
 				601168DD2912973B00BC4EB9 /* String+Date.swift in Sources */,
 				601168DB2912860000BC4EB9 /* MatchesListDisplay.swift in Sources */,

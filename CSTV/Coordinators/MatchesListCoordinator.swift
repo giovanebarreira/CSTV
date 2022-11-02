@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MatchesListCoordinated {
-    func goToMatchDetails(competitors: [Competitors])
+    func goToMatchDetails(selectedMatch: MatchesListDisplay)
 }
 
 final class MatchesListCoordinator: Coordinator {
@@ -29,10 +29,9 @@ final class MatchesListCoordinator: Coordinator {
 }
 
 extension MatchesListCoordinator: MatchesListCoordinated {
-    func goToMatchDetails(competitors: [Competitors]) {
-        print(competitors)
+    func goToMatchDetails(selectedMatch: MatchesListDisplay) {
 
-        let teamDetailsCoordinator = TeamDetailsCoordinator(navigationController: navigationController, competitors: competitors)
+        let teamDetailsCoordinator = TeamDetailsCoordinator(navigationController: navigationController, selectedMatch: selectedMatch)
         teamDetailsCoordinator.start()
     }
 }

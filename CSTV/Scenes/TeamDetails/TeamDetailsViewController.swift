@@ -11,6 +11,16 @@ final class TeamDetailsViewController: UIViewController {
 
     private var viewModel: TeamDetailsViewModelOutput
 
+    private let stackView: UIStackView = {
+      let stack = UIStackView()
+      stack.translatesAutoresizingMaskIntoConstraints = false
+      stack.axis = .horizontal
+      stack.alignment = .top
+      stack.distribution = .fillEqually
+      stack.spacing = 4
+      return stack
+    }()
+
     init(viewModel: TeamDetailsViewModelOutput) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -24,9 +34,33 @@ final class TeamDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .cyan
+        viewModel.delegate = self
+        viewModel.fetchTeamsData()
+    }
 
-        viewModel.fetchTeamDetails(slug: "onyx-talents")
+    private func setupComponents() {
 
+    }
+}
 
+extension TeamDetailsViewController: TeamDetailsDelegate {
+    func showSpinner(_ isLoading: Bool) {
+        DispatchQueue.main.async {
+            isLoading ? self.showSpinner() : self.removeSpinner()
+        }
+    }
+
+    private func alertCallback() {
+        self.viewModel.fetchTeamsData()
+    }
+
+    func didFail(error: String) {
+        self.showAlert(errorMessage: error, callback: self.alertCallback)
+    }
+
+    func displayTeams() {
+        DispatchQueue.main.async {
+            self.setupComponents()
+        }
     }
 }

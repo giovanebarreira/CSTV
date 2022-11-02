@@ -8,11 +8,7 @@
 import Foundation
 
 struct MatchesListDisplay {
-    private let match: Match
-
-    init(match: Match) {
-        self.match = match
-    }
+    let match: Match
 
     var matchTime: String {
         let time = match.beginAt

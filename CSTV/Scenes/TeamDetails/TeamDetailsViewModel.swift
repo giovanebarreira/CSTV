@@ -8,61 +8,74 @@
 import Foundation
 
 protocol TeamDetailsViewModelOutput {
-    func fetchTeamDetails(slug: String)
-    var teams: [TeamDetails] { get }
+    func fetchTeamsData()
+    var teamDetailsDisplay: TeamDetailsDisplay? { get }
     var delegate: TeamDetailsDelegate? { get set }
 }
 
 protocol TeamDetailsDelegate: AnyObject {
-    func displayTeams()
     func showSpinner(_ isLoading: Bool)
     func didFail(error: String)
+    func displayTeams()
 }
 
 final class TeamDetailsViewModel: TeamDetailsViewModelOutput {
     weak var delegate: TeamDetailsDelegate?
     private let service: TeamDetailsService
-    private let competitors: [Competitors]
-    var teams: [TeamDetails] = []
+    private let selectedMatch: MatchesListDisplay
+    var teamDetailsDisplay: TeamDetailsDisplay?
 
-    init(service: TeamDetailsService, competitors: [Competitors]) {
+    init(service: TeamDetailsService, selectedMatch: MatchesListDisplay) {
         self.service = service
-        self.competitors = competitors
+        self.selectedMatch = selectedMatch
     }
 
-//    func fetchTeamsData() {
-//        let group = DispatchGroup()
-//        var team1: [TeamDetails]?
-//        var team2: [TeamDetails]?
-//        guard let slugTeam1 = competitors.first?.opponent.slug else { return }
-//        guard let slugTeam2 = competitors.last?.opponent.slug else { return }
-//
-//        fetchTeamDetails(slug: slugTeam1, group: group, completion: { team1 = $0 ?? [] })
-//        fetchTeamDetails(slug: slugTeam2, group: group, completion: { team2 = $0 ?? [] })
-//
-//        group.notify(queue: .global(qos: .background)) {
-//            self.teams.append(team1)
-//            self.teams.append(team2)
-//        }
-//    }
+    func fetchTeamsData() {
+        let group = DispatchGroup()
+        var team1: [Player]?
+        var team2: [Player]?
 
-    //, group: DispatchGroup, completion: @escaping ([TeamDetails]?) -> Void
+        guard let slugTeam1 = selectedMatch.competitors.first?.opponent.slug else { return }
+        guard let slugTeam2 = selectedMatch.competitors.last?.opponent.slug else { return }
 
-    func fetchTeamDetails(slug: String) {
-     //   group.enter()
+        fetchTeam1Details(slug: slugTeam1, group: group, completion: { team1 = $0?.first?.players ?? [] })
+        fetchTeam2Details(slug: slugTeam2, group: group, completion: { team2 = $0?.last?.players ?? [] })
+
+        group.notify(queue: .global(qos: .background)) {
+            self.teamDetailsDisplay = TeamDetailsDisplay(selectedMatch: self.selectedMatch, team1: team1, team2: team2)
+            self.delegate?.displayTeams()
+        }
+    }
+
+    private func fetchTeam1Details(slug: String, group: DispatchGroup, completion: @escaping ([TeamDetails]?) -> Void) {
+        group.enter()
         delegate?.showSpinner(true)
         service.fetchTeamDetails(teamSlug: slug) { [weak self] result in
             switch result {
             case .success(let team):
-                print(team)
-           //     completion(team)
+                completion(team)
 
             case .failure(let error):
                 self?.delegate?.didFail(error: error.localizedDescription)
-              //  completion(nil)
+                completion(nil)
             }
             self?.delegate?.showSpinner(false)
-         //   group.leave()
+            group.leave()
+        }
+    }
+
+    private func fetchTeam2Details(slug: String, group: DispatchGroup, completion: @escaping ([TeamDetails]?) -> Void) {
+        group.enter()
+        service.fetchTeamDetails(teamSlug: slug) { [weak self] result in
+            switch result {
+            case .success(let team):
+                completion(team)
+
+            case .failure(let error):
+                self?.delegate?.didFail(error: error.localizedDescription)
+                completion(nil)
+            }
+            group.leave()
         }
     }
 }
