@@ -40,6 +40,8 @@ struct MatchesListDisplay {
         let serie = match.serie.fullName
         return "\(leagueName) \(serie)"
     }
+
+    var competitors: [Competitors] { match.competitors }
 }
 
 

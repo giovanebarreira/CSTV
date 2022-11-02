@@ -24,7 +24,7 @@ class TimeView: UIStackView {
     var timeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 9)
+        label.font = .systemFont(ofSize: 8)
         label.textColor = .title
         return label
     }()

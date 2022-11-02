@@ -8,6 +8,7 @@
 import UIKit
 
 final class MatchesListViewController: UIViewController {
+    var coordinatorDelegate: MatchesListCoordinated?
     private var viewModel: MatchesListViewModelOutput
     private var tableView = UITableView()
     private var isFetchingData: Bool = false
@@ -96,8 +97,8 @@ extension MatchesListViewController: UITableViewDelegate, UITableViewDataSource 
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       tableView.deselectRow(at: indexPath, animated: true)
-     // let selectedMovie = viewModel.homeListDisplay[indexPath.row]
-      //  coordinatorDelegate?.goToMovieDetails(selectedMovie: selectedMovie)
+      let selectedMatch = viewModel.matchesList[indexPath.row]
+        coordinatorDelegate?.goToMatchDetails(competitors: selectedMatch.competitors)
     }
 }
 
