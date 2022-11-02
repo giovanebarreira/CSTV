@@ -8,27 +8,32 @@
 import UIKit
 
 class TimeView: UIStackView {
-    var timeString: String
-    var isNow: Bool
-
-    private var timeLabel: UILabel {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 8)
-        label.text = isNow ? "AGORA" : timeString
-        label.textColor = .title
-        return label
+    var timeString: String = "" {
+        didSet {
+            timeLabel.text = timeString
+        }
     }
 
-    init(timeString: String, isNow: Bool) {
-        self.timeString = timeString
-        self.isNow = isNow
+    var isNow: Bool = false {
+        didSet {
+            self.backgroundColor = isNow ? .alert : .scheduleTime
+            timeLabel.text = isNow ? "AGORA" : timeString
+        }
+    }
+
+    var timeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 9)
+        label.textColor = .title
+        return label
+    }()
+
+    init() {
         super.init(frame: .zero)
-        self.backgroundColor = isNow ? .alert : .scheduleTime
         translatesAutoresizingMaskIntoConstraints = false
         axis = .vertical
         alignment = .center
-
         addArrangedSubview(timeLabel)
     }
 

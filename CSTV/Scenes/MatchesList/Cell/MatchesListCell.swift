@@ -11,12 +11,24 @@ final class MatchesListCell: UITableViewCell {
     static let reuseId = "MatchesListCell"
     static let estimatedRowHeight: CGFloat = 200
 
+    // Components
+    let timeView = TimeView()
+    var team1 = BadgeComponent()
+    var team2 = BadgeComponent()
+    var league = LeagueComponent()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupViewLayout()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        setupViewLayout()
     }
 
     private let baseView: UIView = {
@@ -55,19 +67,35 @@ final class MatchesListCell: UITableViewCell {
         return view
     }()
 
-
     func configure(match: MatchesListDisplay) {
-        var timeView = TimeView(timeString: match.matchTime, isNow: match.matchTimeIsNow)
-        var team1 = BadgeComponent(teamImage: match.team1Bagde, name: match.team1Name)
-        var team2 = BadgeComponent(teamImage: match.team2Bagde, name: match.team2Name)
-        var league = LeagueComponent(badgeImage: match.leagueBadge, leagueName: match.leagueAndSerie)
-        
-        setupViewLayout(timeView: timeView, team1: team1, team2: team2, league: league)
+        timeView.timeString = match.matchTime
+        timeView.isNow = match.matchTimeIsNow
+
+        team1.name = match.team1Name
+        team1.teamImage = match.team1Bagde
+        team2.name = match.team2Name
+        team2.teamImage = match.team2Bagde
+
+        league.badgeImage = match.leagueBadge
+        league.leagueName = match.leagueAndSerie
     }
 
-    private func setupViewLayout(timeView: TimeView, team1: BadgeComponent, team2: BadgeComponent, league: LeagueComponent) {
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        timeView.timeLabel.text = nil
+        team1.badgeImage.image = nil
+        team1.teamName.text = nil
+        team2.badgeImage.image = nil
+        team2.teamName.text = nil
+        league.badgeImageView.image = nil
+        league.leagueText.text = nil
+
+    }
+
+    private func setupViewLayout() {
         contentView.backgroundColor = .background
+
         contentView.addSubview(baseView)
         baseView.addSubview(timeView)
         baseView.addSubview(stackView)
@@ -119,3 +147,5 @@ final class MatchesListCell: UITableViewCell {
         ])
     }
 }
+
+

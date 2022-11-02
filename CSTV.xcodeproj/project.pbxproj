@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		601168DB2912860000BC4EB9 /* MatchesListDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601168DA2912860000BC4EB9 /* MatchesListDisplay.swift */; };
 		601168DD2912973B00BC4EB9 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601168DC2912973B00BC4EB9 /* String+Date.swift */; };
-		601168DF2912A5B500BC4EB9 /* KingfisherHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601168DE2912A5B500BC4EB9 /* KingfisherHeader.swift */; };
+		602A80B12912EBCC0081A35A /* TeamDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A80B02912EBCC0081A35A /* TeamDetailsViewController.swift */; };
+		602A80B32912EC1D0081A35A /* TeamDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602A80B22912EC1D0081A35A /* TeamDetailsViewModel.swift */; };
 		608282B72911323F007C7F49 /* LeagueComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282B62911323F007C7F49 /* LeagueComponent.swift */; };
 		608282B9291135A2007C7F49 /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282B8291135A2007C7F49 /* UIView+RoundCorners.swift */; };
 		608282BB291145B8007C7F49 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282BA291145B8007C7F49 /* TimeView.swift */; };
@@ -29,7 +30,7 @@
 		60A3EE68290EBBC2009C2C85 /* MatchesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE67290EBBC2009C2C85 /* MatchesListService.swift */; };
 		60A3EE6C290EBC7E009C2C85 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE6B290EBC7E009C2C85 /* Match.swift */; };
 		60A3EE6E290EE370009C2C85 /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE6D290EE370009C2C85 /* TeamDetails.swift */; };
-		60A3EE70290EE4BD009C2C85 /* TeamDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE6F290EE4BD009C2C85 /* TeamDetailsService.swift */; };
+		60A3EE70290EE4BD009C2C85 /* MatchDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE6F290EE4BD009C2C85 /* MatchDetailsService.swift */; };
 		60B6DB182911C2FE007E886B /* BadgeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B6DB172911C2FE007E886B /* BadgeComponent.swift */; };
 		60B827F5290FD4A9005A70F3 /* MatchesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B827F4290FD4A9005A70F3 /* MatchesListViewModel.swift */; };
 		60B827F8290FE0D4005A70F3 /* UIViewController+Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B827F7290FE0D4005A70F3 /* UIViewController+Spinner.swift */; };
@@ -52,7 +53,8 @@
 /* Begin PBXFileReference section */
 		601168DA2912860000BC4EB9 /* MatchesListDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListDisplay.swift; sourceTree = "<group>"; };
 		601168DC2912973B00BC4EB9 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
-		601168DE2912A5B500BC4EB9 /* KingfisherHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherHeader.swift; sourceTree = "<group>"; };
+		602A80B02912EBCC0081A35A /* TeamDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewController.swift; sourceTree = "<group>"; };
+		602A80B22912EC1D0081A35A /* TeamDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewModel.swift; sourceTree = "<group>"; };
 		608282B62911323F007C7F49 /* LeagueComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueComponent.swift; sourceTree = "<group>"; };
 		608282B8291135A2007C7F49 /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorners.swift"; sourceTree = "<group>"; };
 		608282BA291145B8007C7F49 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
@@ -75,7 +77,7 @@
 		60A3EE67290EBBC2009C2C85 /* MatchesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListService.swift; sourceTree = "<group>"; };
 		60A3EE6B290EBC7E009C2C85 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		60A3EE6D290EE370009C2C85 /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
-		60A3EE6F290EE4BD009C2C85 /* TeamDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsService.swift; sourceTree = "<group>"; };
+		60A3EE6F290EE4BD009C2C85 /* MatchDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailsService.swift; sourceTree = "<group>"; };
 		60B6DB172911C2FE007E886B /* BadgeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeComponent.swift; sourceTree = "<group>"; };
 		60B827F4290FD4A9005A70F3 /* MatchesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListViewModel.swift; sourceTree = "<group>"; };
 		60B827F7290FE0D4005A70F3 /* UIViewController+Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Spinner.swift"; sourceTree = "<group>"; };
@@ -103,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		602A80AD2912EBA70081A35A /* TeamDetails */ = {
+			isa = PBXGroup;
+			children = (
+				602A80B02912EBCC0081A35A /* TeamDetailsViewController.swift */,
+				602A80B22912EC1D0081A35A /* TeamDetailsViewModel.swift */,
+			);
+			path = TeamDetails;
+			sourceTree = "<group>";
+		};
 		608282B52911321E007C7F49 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +176,7 @@
 		60A3EE5A290EA975009C2C85 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				602A80AD2912EBA70081A35A /* TeamDetails */,
 				608282B52911321E007C7F49 /* Components */,
 				60A3EE5B290EA98A009C2C85 /* MatchesList */,
 			);
@@ -198,7 +210,7 @@
 			children = (
 				60A3EE5E290EAAB9009C2C85 /* Network */,
 				60A3EE67290EBBC2009C2C85 /* MatchesListService.swift */,
-				60A3EE6F290EE4BD009C2C85 /* TeamDetailsService.swift */,
+				60A3EE6F290EE4BD009C2C85 /* MatchDetailsService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -232,7 +244,6 @@
 				60B82801290FF06E005A70F3 /* UIColor.swift */,
 				608282B8291135A2007C7F49 /* UIView+RoundCorners.swift */,
 				601168DC2912973B00BC4EB9 /* String+Date.swift */,
-				601168DE2912A5B500BC4EB9 /* KingfisherHeader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -316,6 +327,7 @@
 			mainGroup = 60A3EE17290EA176009C2C85;
 			packageReferences = (
 				60B827FE290FE4B6005A70F3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				602A803D2912C4CE0081A35A /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 60A3EE21290EA176009C2C85 /* Products */;
 			projectDirPath = "";
@@ -351,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				602A80B12912EBCC0081A35A /* TeamDetailsViewController.swift in Sources */,
 				60B827F8290FE0D4005A70F3 /* UIViewController+Spinner.swift in Sources */,
 				60A3EE6E290EE370009C2C85 /* TeamDetails.swift in Sources */,
 				60B827F5290FD4A9005A70F3 /* MatchesListViewModel.swift in Sources */,
@@ -358,6 +371,7 @@
 				60A3EE62290EAF4D009C2C85 /* NetworkError.swift in Sources */,
 				60A3EE28290EA176009C2C85 /* MatchesListViewController.swift in Sources */,
 				60A3EE59290EA825009C2C85 /* MatchesListCoordinator.swift in Sources */,
+				602A80B32912EC1D0081A35A /* TeamDetailsViewModel.swift in Sources */,
 				60A3EE66290EB312009C2C85 /* Endpoint.swift in Sources */,
 				60A3EE64290EAF58009C2C85 /* HttpMethod.swift in Sources */,
 				60B827FD290FE2A7005A70F3 /* UIViewController+Alert.swift in Sources */,
@@ -369,10 +383,9 @@
 				60A3EE68290EBBC2009C2C85 /* MatchesListService.swift in Sources */,
 				60B827FB290FE10B005A70F3 /* MatchesListCell.swift in Sources */,
 				608282BB291145B8007C7F49 /* TimeView.swift in Sources */,
-				601168DF2912A5B500BC4EB9 /* KingfisherHeader.swift in Sources */,
 				60A3EE24290EA176009C2C85 /* AppDelegate.swift in Sources */,
 				60A3EE6C290EBC7E009C2C85 /* Match.swift in Sources */,
-				60A3EE70290EE4BD009C2C85 /* TeamDetailsService.swift in Sources */,
+				60A3EE70290EE4BD009C2C85 /* MatchDetailsService.swift in Sources */,
 				60A3EE26290EA176009C2C85 /* SceneDelegate.swift in Sources */,
 				608282B9291135A2007C7F49 /* UIView+RoundCorners.swift in Sources */,
 				60A3EE60290EAAD9009C2C85 /* NetworkService.swift in Sources */,
@@ -659,6 +672,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		602A803D2912C4CE0081A35A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		60B827FE290FE4B6005A70F3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";

@@ -8,40 +8,48 @@
 import UIKit
 import Kingfisher
 
-class BadgeComponent: UIStackView {
-    var teamImage: String
-    var name: String
+final class BadgeComponent: UIStackView {
+    var teamImage: String = "" {
+        didSet {
+            downloadImage(teamImage)
+        }
+    }
 
-    init(teamImage: String, name: String) {
-        self.teamImage = teamImage
-        self.name = name
+    var name: String = "" {
+        didSet {
+            teamName.text = name
+        }
+    }
+
+    init() {
         super.init(frame: .zero)
-        downloadImage(teamImage)
+    //    downloadImage(teamImage)
         setup()
+       // teamName.text = name
     }
 
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private var badgeImage: UIImageView {
+    var badgeImage: UIImageView = {
         let badgeImage = UIImageView()
         badgeImage.translatesAutoresizingMaskIntoConstraints = false
         badgeImage.contentMode = .scaleAspectFit
-        badgeImage.layer.cornerRadius = badgeImage.frame.height/2
+        badgeImage.layer.masksToBounds = true
         badgeImage.clipsToBounds = true
-        badgeImage.backgroundColor = .systemBackground
+        badgeImage.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        badgeImage.widthAnchor.constraint(equalToConstant: 60).isActive = true
         return badgeImage
-    }
+    }()
 
-    private var teamName: UILabel {
+    var teamName: UILabel = {
         let teamLabel = UILabel()
         teamLabel.translatesAutoresizingMaskIntoConstraints = false
         teamLabel.font = .systemFont(ofSize: 8)
         teamLabel.textColor = .title
-        teamLabel.text = name
         return teamLabel
-    }
+    }()
 
     private func setup() {
         translatesAutoresizingMaskIntoConstraints = false

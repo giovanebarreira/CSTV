@@ -90,7 +90,6 @@ extension MatchesListViewController: UITableViewDelegate, UITableViewDataSource 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MatchesListCell.reuseId, for: indexPath) as? MatchesListCell else { return UITableViewCell() }
 
         let matchResult = viewModel.matchesList[indexPath.row]
-        print(indexPath.row)
         cell.configure(match: matchResult)
         return cell
     }

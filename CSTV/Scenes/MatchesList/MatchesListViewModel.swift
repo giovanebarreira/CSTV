@@ -29,12 +29,14 @@ final class MatchesListViewModel: MatchesListViewModelOutput {
     }
 
     func fetchData(page: Int) {
-        fetchMatchesList(page: page) { [weak self] listResult in
-            guard let listResult = listResult else { return }
-            listResult.forEach { match in
-                self?.matchesList.append(MatchesListDisplay(match: match))
+        DispatchQueue.global(qos: .background).async {
+            self.fetchMatchesList(page: page) { [weak self] listResult in
+                guard let listResult = listResult else { return }
+                listResult.forEach { match in
+                    self?.matchesList.append(MatchesListDisplay(match: match))
+                }
+                self?.delegate?.displayMatchesList()
             }
-            self?.delegate?.displayMatchesList()
         }
     }
 

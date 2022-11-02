@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MatchesListCoordinated {
-    //func goToMatchDetails(selectedMatch)
+    func goToMatchDetails(competitors: Competitors)
 }
 
 final class MatchesListCoordinator: Coordinator {
@@ -28,5 +28,7 @@ final class MatchesListCoordinator: Coordinator {
 }
 
 extension MatchesListCoordinator: MatchesListCoordinated {
-    
+    func goToMatchDetails(competitors: Competitors) {
+        print(competitors)
+    }
 }

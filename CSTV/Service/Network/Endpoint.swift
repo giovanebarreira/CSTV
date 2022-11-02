@@ -14,7 +14,7 @@ struct Endpoint {
     private let teams = "teams?search[slug]"
 
     func upcomingMatchesEndpoint(page: Int = 1) -> String {
-        return "\(baseUrl)\(upcomingMatches)?sort=&page=\(page)&per_page=50"
+        return "\(baseUrl)\(upcomingMatches)?sort=begin_at&page=\(page)&per_page=10"
     }
 
     func teamDetailsEndpoint(teamSlug: String) -> String {
