@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		601168DB2912860000BC4EB9 /* MatchesListDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601168DA2912860000BC4EB9 /* MatchesListDisplay.swift */; };
 		601168DD2912973B00BC4EB9 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601168DC2912973B00BC4EB9 /* String+Date.swift */; };
+		601168DF2912A5B500BC4EB9 /* KingfisherHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601168DE2912A5B500BC4EB9 /* KingfisherHeader.swift */; };
 		608282B72911323F007C7F49 /* LeagueComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282B62911323F007C7F49 /* LeagueComponent.swift */; };
 		608282B9291135A2007C7F49 /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282B8291135A2007C7F49 /* UIView+RoundCorners.swift */; };
 		608282BB291145B8007C7F49 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282BA291145B8007C7F49 /* TimeView.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		601168DA2912860000BC4EB9 /* MatchesListDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListDisplay.swift; sourceTree = "<group>"; };
 		601168DC2912973B00BC4EB9 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		601168DE2912A5B500BC4EB9 /* KingfisherHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherHeader.swift; sourceTree = "<group>"; };
 		608282B62911323F007C7F49 /* LeagueComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueComponent.swift; sourceTree = "<group>"; };
 		608282B8291135A2007C7F49 /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorners.swift"; sourceTree = "<group>"; };
 		608282BA291145B8007C7F49 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				60B82801290FF06E005A70F3 /* UIColor.swift */,
 				608282B8291135A2007C7F49 /* UIView+RoundCorners.swift */,
 				601168DC2912973B00BC4EB9 /* String+Date.swift */,
+				601168DE2912A5B500BC4EB9 /* KingfisherHeader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				60A3EE68290EBBC2009C2C85 /* MatchesListService.swift in Sources */,
 				60B827FB290FE10B005A70F3 /* MatchesListCell.swift in Sources */,
 				608282BB291145B8007C7F49 /* TimeView.swift in Sources */,
+				601168DF2912A5B500BC4EB9 /* KingfisherHeader.swift in Sources */,
 				60A3EE24290EA176009C2C85 /* AppDelegate.swift in Sources */,
 				60A3EE6C290EBC7E009C2C85 /* Match.swift in Sources */,
 				60A3EE70290EE4BD009C2C85 /* TeamDetailsService.swift in Sources */,

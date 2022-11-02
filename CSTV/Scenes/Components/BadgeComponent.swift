@@ -6,15 +6,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 class BadgeComponent: UIStackView {
-    var teamImage: UIImage
+    var teamImage: String
     var name: String
 
-    init(teamImage: UIImage, name: String) {
+    init(teamImage: String, name: String) {
         self.teamImage = teamImage
         self.name = name
         super.init(frame: .zero)
+        downloadImage(teamImage)
         setup()
     }
 
@@ -28,7 +30,6 @@ class BadgeComponent: UIStackView {
         badgeImage.contentMode = .scaleAspectFit
         badgeImage.layer.cornerRadius = badgeImage.frame.height/2
         badgeImage.clipsToBounds = true
-        badgeImage.image = teamImage
         badgeImage.backgroundColor = .systemBackground
         return badgeImage
     }
@@ -52,5 +53,12 @@ class BadgeComponent: UIStackView {
 
         addArrangedSubview(badgeImage)
         addArrangedSubview(teamName)
+    }
+
+    private func downloadImage(_ imageURL: String) {
+        guard let thumbnailURL = URL(string: imageURL) else { return }
+        let resource = ImageResource(downloadURL: thumbnailURL, cacheKey: imageURL)
+        badgeImage.kf.indicatorType = .activity
+        badgeImage.kf.setImage(with: resource)
     }
 }

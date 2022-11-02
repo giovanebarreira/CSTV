@@ -22,12 +22,10 @@ protocol MatchesListDelegate: AnyObject {
 final class MatchesListViewModel: MatchesListViewModelOutput {
     var matchesList: [MatchesListDisplay] = []
     private let matchesListService: MatchesListNetworking
-    //   private let teamDetailsService: TeamDetailsNetworking
     weak var delegate: MatchesListDelegate?
 
     init(matchesListService: MatchesListNetworking) {
         self.matchesListService = matchesListService
-        //  self.teamDetailsService = teamDetailsService
     }
 
     func fetchData(page: Int) {

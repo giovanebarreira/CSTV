@@ -28,14 +28,7 @@ final class MatchesListViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         viewModel.delegate = self
-        viewModel.fetchData(page: currentPage)
-
-        print("2022-11-02T11:30:00Z".dayMonthHour, "<<<<<<<")
-        print("2022-11-02T11:30:00Z".weekDayHour, "<<<<<<<")
-        print("2022-11-02T11:30:00Z".isToday, "<<<<<<<")
-        print("2022-11-02T11:30:00Z".isTomorrow, "<<<<<<<")
-        print("2022-11-02T12:30:00Z".isNow, "<<<<<<<")
-        
+        viewModel.fetchData(page: currentPage)        
     }
 
     func setupTableView() {
@@ -97,6 +90,7 @@ extension MatchesListViewController: UITableViewDelegate, UITableViewDataSource 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MatchesListCell.reuseId, for: indexPath) as? MatchesListCell else { return UITableViewCell() }
 
         let matchResult = viewModel.matchesList[indexPath.row]
+        print(indexPath.row)
         cell.configure(match: matchResult)
         return cell
     }

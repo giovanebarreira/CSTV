@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class MatchesListCell: UITableViewCell {
     static let reuseId = "MatchesListCell"
@@ -58,31 +57,27 @@ final class MatchesListCell: UITableViewCell {
 
 
     func configure(match: MatchesListDisplay) {
-        let team1 = BadgeComponent(teamImage: UIImage(systemName: "person")!, name: match.competitors.first!.opponent.name)
-        setupViewLayout(team1: team1)
+        var timeView = TimeView(timeString: match.matchTime, isNow: match.matchTimeIsNow)
+        var team1 = BadgeComponent(teamImage: match.team1Bagde, name: match.team1Name)
+        var team2 = BadgeComponent(teamImage: match.team2Bagde, name: match.team2Name)
+        var league = LeagueComponent(badgeImage: match.leagueBadge, leagueName: match.leagueAndSerie)
+        
+        setupViewLayout(timeView: timeView, team1: team1, team2: team2, league: league)
     }
 
-    private var timeView = TimeView(timeString: "hoje, 22:00", isNow: true)
-  //  private var team1 = BadgeComponent(teamImage: UIImage(systemName: "person")!, name: "lal")
-    private var team2 = BadgeComponent(teamImage: UIImage(systemName: "person")!, name: "lal")
+    private func setupViewLayout(timeView: TimeView, team1: BadgeComponent, team2: BadgeComponent, league: LeagueComponent) {
 
-    private var leagueComponent = LeagueComponent(badgeImage: UIImage(systemName: "photo")!, leagueName: "League + serie")
-
-    private func setup() {
         contentView.backgroundColor = .background
         contentView.addSubview(baseView)
         baseView.addSubview(timeView)
         baseView.addSubview(stackView)
-    //    stackView.addArrangedSubview(team1)
+        stackView.addArrangedSubview(team1)
         stackView.addArrangedSubview(versusLabel)
         stackView.addArrangedSubview(team2)
         baseView.addSubview(divider)
-        baseView.addSubview(leagueComponent)
-    }
-        
-    private func setupViewLayout(team1: BadgeComponent) {
-        setup()
-        stackView.addArrangedSubview(team1)
+        baseView.addSubview(league)
+
+
         // Base view
         NSLayoutConstraint.activate([
             baseView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 3),
@@ -117,10 +112,10 @@ final class MatchesListCell: UITableViewCell {
 
         // League component
         NSLayoutConstraint.activate([
-            leagueComponent.topAnchor.constraint(equalToSystemSpacingBelow: divider.bottomAnchor, multiplier: 1),
-            leagueComponent.leadingAnchor.constraint(equalToSystemSpacingAfter: baseView.leadingAnchor, multiplier: 2),
-            baseView.trailingAnchor.constraint(equalToSystemSpacingAfter: leagueComponent.trailingAnchor, multiplier: 0),
-            baseView.bottomAnchor.constraint(equalToSystemSpacingBelow: leagueComponent.bottomAnchor, multiplier: 2)
+            league.topAnchor.constraint(equalToSystemSpacingBelow: divider.bottomAnchor, multiplier: 1),
+            league.leadingAnchor.constraint(equalToSystemSpacingAfter: baseView.leadingAnchor, multiplier: 2),
+            baseView.trailingAnchor.constraint(equalToSystemSpacingAfter: league.trailingAnchor, multiplier: 0),
+            baseView.bottomAnchor.constraint(equalToSystemSpacingBelow: league.bottomAnchor, multiplier: 2)
         ])
     }
 }

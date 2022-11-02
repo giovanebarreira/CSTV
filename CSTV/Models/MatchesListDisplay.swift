@@ -28,6 +28,7 @@ struct MatchesListDisplay {
         }
     }
 
+    var matchTimeIsNow: Bool { match.beginAt.isNow }
     var team1Bagde: String { match.competitors.first?.opponent.imageURL ?? "" }
     var team1Name: String { match.competitors.first?.opponent.name ?? "" }
     var team2Bagde: String { match.competitors.last?.opponent.imageURL ?? "" }
