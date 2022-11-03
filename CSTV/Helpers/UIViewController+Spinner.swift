@@ -12,7 +12,7 @@ fileprivate var aView: UIView?
 extension UIViewController {
     func showSpinner() {
         aView = UIView(frame: self.view.bounds)
-        aView!.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        aView!.backgroundColor = .clear
 
         let activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.center = aView!.center

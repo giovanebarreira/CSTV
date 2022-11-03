@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct TeamDetailsDisplay {
+struct TeamDetailsDisplay: Equatable {
+    static func == (lhs: TeamDetailsDisplay, rhs: TeamDetailsDisplay) -> Bool {
+        lhs.selectedMatch.matchTime == rhs.selectedMatch.matchTime
+    }
+
     let selectedMatch: MatchesListDisplay
     let team1: [Player]?
     let team2: [Player]?

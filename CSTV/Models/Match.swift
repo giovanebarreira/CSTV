@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Match: Codable {
+struct Match: Codable, Equatable {
+    static func == (lhs: Match, rhs: Match) -> Bool {
+        lhs.league.name == rhs.league.name
+    }
+
     let beginAt: String
     let league: League
     let competitors: [Competitors]

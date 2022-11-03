@@ -1,0 +1,441 @@
+[
+    {
+        "begin_at": "2022-11-03T13:00:00Z",
+        "detailed_stats": false,
+        "draw": false,
+        "end_at": null,
+        "forfeit": false,
+        "game_advantage": null,
+        "games": [
+            {
+                "begin_at": null,
+                "complete": false,
+                "detailed_stats": false,
+                "end_at": null,
+                "finished": false,
+                "forfeit": false,
+                "id": 87582,
+                "length": null,
+                "match_id": 667503,
+                "position": 1,
+                "status": "not_started",
+                "winner": {
+                    "id": null,
+                    "type": "Team"
+                },
+                "winner_type": "Team"
+            }
+        ],
+        "id": 667503,
+        "league": {
+            "id": 4243,
+            "image_url": null,
+            "modified_at": "2020-11-12T15:51:24Z",
+            "name": "ESEA",
+            "slug": "cs-go-esea",
+            "url": "https://play.esea.net/"
+        },
+        "league_id": 4243,
+        "live": {
+            "opens_at": null,
+            "supported": false,
+            "url": null
+        },
+        "match_type": "best_of",
+        "modified_at": "2022-11-03T08:43:18Z",
+        "name": "EC Brugge vs Nexus",
+        "number_of_games": 1,
+        "opponents": [
+            {
+                "opponent": {
+                    "acronym": null,
+                    "id": 128550,
+                    "image_url": "https://cdn.pandascore.co/images/team/image/128550/108px_club_brugge_e_sports.png",
+                    "location": null,
+                    "modified_at": "2022-11-02T14:45:28Z",
+                    "name": "EC Brugge",
+                    "slug": "club-brugge-esports"
+                },
+                "type": "Team"
+            },
+            {
+                "opponent": {
+                    "acronym": null,
+                    "id": 126699,
+                    "image_url": "https://cdn.pandascore.co/images/team/image/126699/7187.png",
+                    "location": "RO",
+                    "modified_at": "2022-10-31T12:37:32Z",
+                    "name": "Nexus",
+                    "slug": "nexus"
+                },
+                "type": "Team"
+            }
+        ],
+        "original_scheduled_at": "2022-11-03T13:00:00Z",
+        "rescheduled": false,
+        "results": [
+            {
+                "score": 0,
+                "team_id": 128550
+            },
+            {
+                "score": 0,
+                "team_id": 126699
+            }
+        ],
+        "scheduled_at": "2022-11-03T13:00:00Z",
+        "serie": {
+            "begin_at": "2022-10-24T15:00:00Z",
+            "end_at": null,
+            "full_name": "Advanced Europe season 43 2022",
+            "id": 5209,
+            "league_id": 4243,
+            "modified_at": "2022-10-24T07:59:55Z",
+            "name": "Advanced Europe",
+            "season": "43",
+            "slug": "cs-go-esea-advanced-europe-43-2022",
+            "winner_id": null,
+            "winner_type": null,
+            "year": 2022
+        },
+        "serie_id": 5209,
+        "slug": "ec-brugge-vs-nexus-2022-11-03",
+        "status": "not_started",
+        "streams_list": [],
+        "tournament": {
+            "begin_at": "2022-10-24T15:00:00Z",
+            "end_at": null,
+            "id": 9212,
+            "league_id": 4243,
+            "live_supported": false,
+            "modified_at": "2022-11-03T12:27:19Z",
+            "name": "Regular Season",
+            "prizepool": "20300 United States Dollar",
+            "serie_id": 5209,
+            "slug": "cs-go-esea-advanced-europe-43-2022-regular-season",
+            "tier": "d",
+            "winner_id": null,
+            "winner_type": "Team"
+        },
+        "tournament_id": 9212,
+        "videogame": {
+            "id": 3,
+            "name": "CS:GO",
+            "slug": "cs-go"
+        },
+        "videogame_version": null,
+        "winner": null,
+        "winner_id": null,
+        "winner_type": "Team"
+    },
+    {
+        "begin_at": "2022-11-03T13:30:00Z",
+        "detailed_stats": false,
+        "draw": false,
+        "end_at": null,
+        "forfeit": false,
+        "game_advantage": null,
+        "games": [
+            {
+                "begin_at": null,
+                "complete": false,
+                "detailed_stats": false,
+                "end_at": null,
+                "finished": false,
+                "forfeit": false,
+                "id": 87111,
+                "length": null,
+                "match_id": 663836,
+                "position": 1,
+                "status": "not_started",
+                "winner": {
+                    "id": null,
+                    "type": "Team"
+                },
+                "winner_type": "Team"
+            }
+        ],
+        "id": 663836,
+        "league": {
+            "id": 4495,
+            "image_url": "https://cdn.pandascore.co/images/league/image/4495/MSR_logo.png",
+            "modified_at": "2022-08-12T14:24:00Z",
+            "name": "Czech Championship",
+            "slug": "cs-go-czech-championship",
+            "url": null
+        },
+        "league_id": 4495,
+        "live": {
+            "opens_at": null,
+            "supported": false,
+            "url": null
+        },
+        "match_type": "best_of",
+        "modified_at": "2022-11-02T15:46:04Z",
+        "name": "Enterprise vs Sampi",
+        "number_of_games": 1,
+        "opponents": [
+            {
+                "opponent": {
+                    "acronym": null,
+                    "id": 127743,
+                    "image_url": "https://cdn.pandascore.co/images/team/image/127743/t49839.png",
+                    "location": null,
+                    "modified_at": "2022-10-26T18:54:35Z",
+                    "name": "Enterprise",
+                    "slug": "enterprise-esports"
+                },
+                "type": "Team"
+            },
+            {
+                "opponent": {
+                    "acronym": null,
+                    "id": 127496,
+                    "image_url": "https://cdn.pandascore.co/images/team/image/127496/sampi_s_transparent.png",
+                    "location": null,
+                    "modified_at": "2022-10-26T18:54:36Z",
+                    "name": "Sampi",
+                    "slug": "sampi"
+                },
+                "type": "Team"
+            }
+        ],
+        "original_scheduled_at": "2022-11-03T13:30:00Z",
+        "rescheduled": false,
+        "results": [
+            {
+                "score": 0,
+                "team_id": 127743
+            },
+            {
+                "score": 0,
+                "team_id": 127496
+            }
+        ],
+        "scheduled_at": "2022-11-03T13:30:00Z",
+        "serie": {
+            "begin_at": "2022-11-02T12:00:00Z",
+            "end_at": "2022-11-06T19:30:00Z",
+            "full_name": "2022",
+            "id": 5215,
+            "league_id": 4495,
+            "modified_at": "2022-10-26T18:53:01Z",
+            "name": null,
+            "season": null,
+            "slug": "cs-go-czech-championship-2022",
+            "winner_id": null,
+            "winner_type": null,
+            "year": 2022
+        },
+        "serie_id": 5215,
+        "slug": "enterprise-vs-sampi-2022-11-03",
+        "status": "not_started",
+        "streams_list": [
+            {
+                "embed_url": "https://player.twitch.tv/?channel=playzonecz",
+                "language": "cs",
+                "main": true,
+                "official": true,
+                "raw_url": "https://www.twitch.tv/playzonecz"
+            }
+        ],
+        "tournament": {
+            "begin_at": "2022-11-03T12:00:00Z",
+            "end_at": "2022-11-04T18:30:00Z",
+            "id": 9223,
+            "league_id": 4495,
+            "live_supported": false,
+            "modified_at": "2022-10-26T19:00:09Z",
+            "name": "Group B",
+            "prizepool": null,
+            "serie_id": 5215,
+            "slug": "cs-go-czech-championship-2022-group-b",
+            "tier": "d",
+            "winner_id": null,
+            "winner_type": "Team"
+        },
+        "tournament_id": 9223,
+        "videogame": {
+            "id": 3,
+            "name": "CS:GO",
+            "slug": "cs-go"
+        },
+        "videogame_version": null,
+        "winner": null,
+        "winner_id": null,
+        "winner_type": "Team"
+    },
+    {
+        "begin_at": "2022-11-03T14:00:00Z",
+        "detailed_stats": true,
+        "draw": false,
+        "end_at": null,
+        "forfeit": false,
+        "game_advantage": null,
+        "games": [
+            {
+                "begin_at": null,
+                "complete": false,
+                "detailed_stats": true,
+                "end_at": null,
+                "finished": false,
+                "forfeit": false,
+                "id": 86607,
+                "length": null,
+                "match_id": 661651,
+                "position": 1,
+                "status": "not_started",
+                "winner": {
+                    "id": null,
+                    "type": "Team"
+                },
+                "winner_type": "Team"
+            },
+            {
+                "begin_at": null,
+                "complete": false,
+                "detailed_stats": true,
+                "end_at": null,
+                "finished": false,
+                "forfeit": false,
+                "id": 86608,
+                "length": null,
+                "match_id": 661651,
+                "position": 2,
+                "status": "not_started",
+                "winner": {
+                    "id": null,
+                    "type": "Team"
+                },
+                "winner_type": "Team"
+            },
+            {
+                "begin_at": null,
+                "complete": false,
+                "detailed_stats": true,
+                "end_at": null,
+                "finished": false,
+                "forfeit": false,
+                "id": 86609,
+                "length": null,
+                "match_id": 661651,
+                "position": 3,
+                "status": "not_started",
+                "winner": {
+                    "id": null,
+                    "type": "Team"
+                },
+                "winner_type": "Team"
+            }
+        ],
+        "id": 661651,
+        "league": {
+            "id": 4161,
+            "image_url": null,
+            "modified_at": "2019-03-04T11:00:40Z",
+            "name": "IEM",
+            "slug": "cs-go-iem",
+            "url": null
+        },
+        "league_id": 4161,
+        "live": {
+            "opens_at": "2022-11-03T13:45:00Z",
+            "supported": true,
+            "url": "wss://live.pandascore.co/matches/661651"
+        },
+        "match_type": "best_of",
+        "modified_at": "2022-11-02T23:54:06Z",
+        "name": "Round 5: OG vs Vitality",
+        "number_of_games": 3,
+        "opponents": [
+            {
+                "opponent": {
+                    "acronym": null,
+                    "id": 126584,
+                    "image_url": "https://cdn.pandascore.co/images/team/image/126584/600px_og_rb_logo.png",
+                    "location": null,
+                    "modified_at": "2022-10-14T17:58:56Z",
+                    "name": "OG",
+                    "slug": "og-cs-go"
+                },
+                "type": "Team"
+            },
+            {
+                "opponent": {
+                    "acronym": null,
+                    "id": 3455,
+                    "image_url": "https://cdn.pandascore.co/images/team/image/3455/team_vitality_2020.png",
+                    "location": "FR",
+                    "modified_at": "2022-10-14T17:59:01Z",
+                    "name": "Vitality",
+                    "slug": "vitality-cs-go"
+                },
+                "type": "Team"
+            }
+        ],
+        "original_scheduled_at": "2022-11-03T14:00:00Z",
+        "rescheduled": false,
+        "results": [
+            {
+                "score": 0,
+                "team_id": 126584
+            },
+            {
+                "score": 0,
+                "team_id": 3455
+            }
+        ],
+        "scheduled_at": "2022-11-03T14:00:00Z",
+        "serie": {
+            "begin_at": "2022-10-31T14:00:00Z",
+            "end_at": "2022-11-13T21:00:00Z",
+            "full_name": "Rio Major 2022",
+            "id": 5185,
+            "league_id": 4161,
+            "modified_at": "2022-10-22T19:10:25Z",
+            "name": "Rio Major",
+            "season": null,
+            "slug": "cs-go-iem-rio-major-2022",
+            "winner_id": null,
+            "winner_type": null,
+            "year": 2022
+        },
+        "serie_id": 5185,
+        "slug": "2022-11-03-9d1efd48-adc2-43a2-a157-33e4daad95fd",
+        "status": "not_started",
+        "streams_list": [
+            {
+                "embed_url": "https://player.twitch.tv/?channel=esl_csgo",
+                "language": "en",
+                "main": true,
+                "official": true,
+                "raw_url": "https://www.twitch.tv/esl_csgo"
+            }
+        ],
+        "tournament": {
+            "begin_at": "2022-10-31T14:00:00Z",
+            "end_at": "2022-11-04T01:00:00Z",
+            "id": 9163,
+            "league_id": 4161,
+            "live_supported": true,
+            "modified_at": "2022-10-22T19:11:10Z",
+            "name": "Challengers Stage",
+            "prizepool": "1250000 United States Dollar",
+            "serie_id": 5185,
+            "slug": "cs-go-iem-rio-major-2022-challengers-stage",
+            "tier": "s",
+            "winner_id": null,
+            "winner_type": "Team"
+        },
+        "tournament_id": 9163,
+        "videogame": {
+            "id": 3,
+            "name": "CS:GO",
+            "slug": "cs-go"
+        },
+        "videogame_version": null,
+        "winner": null,
+        "winner_id": null,
+        "winner_type": "Team"
+    }
+]

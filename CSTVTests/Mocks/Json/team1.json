@@ -1,0 +1,83 @@
+[
+    {
+        "acronym": null,
+        "current_videogame": {
+            "id": 3,
+            "name": "Enterprise",
+            "slug": "enterprise-esports"
+        },
+        "id": 127743,
+        "image_url": "https://cdn.pandascore.co/images/team/image/127743/t49839.png",
+        "location": null,
+        "modified_at": "2022-10-26T18:54:35Z",
+        "name": "Enterprise",
+        "players": [
+            {
+                "age": 23,
+                "birthday": null,
+                "first_name": "Erik",
+                "id": 25110,
+                "image_url": "https://cdn.pandascore.co/images/player/image/25110/p23436.png",
+                "last_name": "Sith",
+                "modified_at": "2022-10-26T18:54:35Z",
+                "name": "The eLiVe",
+                "nationality": "SK",
+                "role": null,
+                "slug": "the-elive"
+            },
+            {
+                "age": 22,
+                "birthday": "2000-06-07",
+                "first_name": "Deyvid",
+                "id": 28279,
+                "image_url": "https://cdn.pandascore.co/images/player/image/28279/600px_h4rn_at_bge_stara_zagora.png",
+                "last_name": "Benchev",
+                "modified_at": "2022-10-26T18:54:35Z",
+                "name": "h4rn",
+                "nationality": "BG",
+                "role": null,
+                "slug": "harn"
+            },
+            {
+                "age": 20,
+                "birthday": null,
+                "first_name": "Robert",
+                "id": 28707,
+                "image_url": "https://cdn.pandascore.co/images/player/image/28707/p_ydv_bd98v_fwlbl_tb_q_ro_j4.png",
+                "last_name": "Kasper",
+                "modified_at": "2022-10-26T18:54:35Z",
+                "name": "manguss",
+                "nationality": "CZ",
+                "role": null,
+                "slug": "manguss"
+            },
+            {
+                "age": 22,
+                "birthday": "2000-06-23",
+                "first_name": "Raul",
+                "id": 29801,
+                "image_url": null,
+                "last_name": "Gligor",
+                "modified_at": "2022-10-29T11:08:48Z",
+                "name": "Blytz",
+                "nationality": "RO",
+                "role": null,
+                "slug": "blytz"
+            },
+            {
+                "age": 18,
+                "birthday": null,
+                "first_name": "Tomáš",
+                "id": 30101,
+                "image_url": "https://cdn.pandascore.co/images/player/image/30101/esuba_system.png",
+                "last_name": "Zemko",
+                "modified_at": "2022-10-26T18:54:35Z",
+                "name": "system",
+                "nationality": "SK",
+                "role": null,
+                "slug": "system"
+            }
+        ],
+        "slug": "enterprise-esports"
+    }
+]

@@ -1,0 +1,84 @@
+
+[
+    {
+        "acronym": null,
+        "current_videogame": {
+            "id": 3,
+            "name": "CS:GO",
+            "slug": "cs-go"
+        },
+        "id": 129412,
+        "image_url": "https://cdn.pandascore.co/images/team/image/129412/232px_all_stars_gaming_allmode.png",
+        "location": "RO",
+        "modified_at": "2022-10-31T08:34:29Z",
+        "name": "allStars Gaming",
+        "players": [
+            {
+                "age": 25,
+                "birthday": "1997-08-09",
+                "first_name": "Rafael ",
+                "id": 29415,
+                "image_url": "https://cdn.pandascore.co/images/player/image/29415/wca1_dx3_t.png",
+                "last_name": "Gligor",
+                "modified_at": "2022-10-31T08:34:29Z",
+                "name": "RENNE",
+                "nationality": "RO",
+                "role": null,
+                "slug": "renne"
+            },
+            {
+                "age": null,
+                "birthday": null,
+                "first_name": "Alexandru",
+                "id": 33929,
+                "image_url": null,
+                "last_name": "Băicianu",
+                "modified_at": "2022-10-31T08:34:29Z",
+                "name": "l0rd-dll",
+                "nationality": "RO",
+                "role": null,
+                "slug": "l0rd-dll"
+            },
+            {
+                "age": 18,
+                "birthday": null,
+                "first_name": "Gyorfy ",
+                "id": 36591,
+                "image_url": null,
+                "last_name": "Gabriel",
+                "modified_at": "2022-10-31T08:34:29Z",
+                "name": "starplajerz",
+                "nationality": "RO",
+                "role": null,
+                "slug": "starplajerz"
+            },
+            {
+                "age": null,
+                "birthday": null,
+                "first_name": "Alin",
+                "id": 40278,
+                "image_url": null,
+                "last_name": "Mocean",
+                "modified_at": "2022-10-31T08:34:29Z",
+                "name": "cox",
+                "nationality": "RO",
+                "role": null,
+                "slug": "cox"
+            },
+            {
+                "age": null,
+                "birthday": null,
+                "first_name": "Dragos",
+                "id": 40335,
+                "image_url": null,
+                "last_name": "Oloeru",
+                "modified_at": "2022-10-31T08:34:29Z",
+                "name": "xAHEN",
+                "nationality": "RO",
+                "role": null,
+                "slug": "xahen"
+            }
+        ],
+        "slug": "allstars-gaming"
+    }
+]

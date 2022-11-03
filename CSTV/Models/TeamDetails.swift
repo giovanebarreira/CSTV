@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct TeamDetails: Codable {
+struct TeamDetails: Codable, Equatable {
+    static func == (lhs: TeamDetails, rhs: TeamDetails) -> Bool {
+        lhs.name == rhs.name
+    }
+
     let imageURL: String
     let name: String
     let players: [Player]

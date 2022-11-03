@@ -21,11 +21,11 @@ protocol TeamDetailsDelegate: AnyObject {
 
 final class TeamDetailsViewModel: TeamDetailsViewModelOutput {
     weak var delegate: TeamDetailsDelegate?
-    private let service: TeamDetailsService
+    private let service: TeamDetailsNetworking
     private let selectedMatch: MatchesListDisplay
     var teamDetailsDisplay: TeamDetailsDisplay?
 
-    init(service: TeamDetailsService, selectedMatch: MatchesListDisplay) {
+    init(service: TeamDetailsNetworking, selectedMatch: MatchesListDisplay) {
         self.service = service
         self.selectedMatch = selectedMatch
     }
@@ -47,7 +47,7 @@ final class TeamDetailsViewModel: TeamDetailsViewModelOutput {
         }
     }
 
-    private func fetchTeam1Details(slug: String, group: DispatchGroup, completion: @escaping ([TeamDetails]?) -> Void) {
+    func fetchTeam1Details(slug: String, group: DispatchGroup, completion: @escaping ([TeamDetails]?) -> Void) {
         group.enter()
         delegate?.showSpinner(true)
         service.fetchTeamDetails(teamSlug: slug) { [weak self] result in
@@ -64,7 +64,7 @@ final class TeamDetailsViewModel: TeamDetailsViewModelOutput {
         }
     }
 
-    private func fetchTeam2Details(slug: String, group: DispatchGroup, completion: @escaping ([TeamDetails]?) -> Void) {
+    func fetchTeam2Details(slug: String, group: DispatchGroup, completion: @escaping ([TeamDetails]?) -> Void) {
         group.enter()
         service.fetchTeamDetails(teamSlug: slug) { [weak self] result in
             switch result {
