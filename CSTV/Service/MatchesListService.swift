@@ -24,7 +24,7 @@ struct MatchesListService: MatchesListNetworking {
         let url = endpoint.upcomingMatchesEndpoint(page: page)
         let headers =  [
             "accept": "application/json",
-            "authorization": "19bZLlNADA802Bihew3yz4rhdksLZRYEc61YH3hIAbtAdku_FHU"
+            "authorization": endpoint.apiKey
           ]
         
         service.fetchService(url: url, headers: headers, method: .get, completion: completion)

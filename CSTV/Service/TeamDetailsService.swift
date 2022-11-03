@@ -24,7 +24,7 @@ struct TeamDetailsService: TeamDetailsNetworking {
         let url = endpoint.teamDetailsEndpoint(teamSlug: teamSlug)
         let headers =  [
             "accept": "application/json",
-            "authorization": "19bZLlNADA802Bihew3yz4rhdksLZRYEc61YH3hIAbtAdku_FHU"
+            "authorization": endpoint.apiKey
           ]
 
         service.fetchService(url: url, headers: headers, method: .get, completion: completion)

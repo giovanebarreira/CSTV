@@ -73,7 +73,6 @@ final class PlayerView: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.distribution = .equalSpacing
-        stack.alignment = .trailing
         stack.spacing = 0
         return stack
     }()

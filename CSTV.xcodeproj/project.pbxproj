@@ -16,6 +16,7 @@
 		608282B9291135A2007C7F49 /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282B8291135A2007C7F49 /* UIView+RoundCorners.swift */; };
 		608282BB291145B8007C7F49 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282BA291145B8007C7F49 /* TimeView.swift */; };
 		608DF1032913C755005B0DE5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DF1022913C755005B0DE5 /* PlayerView.swift */; };
+		608DF1072913DF19005B0DE5 /* CSTV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 608DF1062913DF19005B0DE5 /* CSTV.plist */; };
 		60A3EE24290EA176009C2C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE23290EA176009C2C85 /* AppDelegate.swift */; };
 		60A3EE26290EA176009C2C85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE25290EA176009C2C85 /* SceneDelegate.swift */; };
 		60A3EE28290EA176009C2C85 /* MatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE27290EA176009C2C85 /* MatchesListViewController.swift */; };
@@ -63,6 +64,7 @@
 		608282B8291135A2007C7F49 /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorners.swift"; sourceTree = "<group>"; };
 		608282BA291145B8007C7F49 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		608DF1022913C755005B0DE5 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		608DF1062913DF19005B0DE5 /* CSTV.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CSTV.plist; sourceTree = "<group>"; };
 		60A3EE20290EA176009C2C85 /* CSTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A3EE23290EA176009C2C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A3EE25290EA176009C2C85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				60A3EE5E290EAAB9009C2C85 /* Network */,
+				608DF1062913DF19005B0DE5 /* CSTV.plist */,
 				60A3EE67290EBBC2009C2C85 /* MatchesListService.swift */,
 				60A3EE6F290EE4BD009C2C85 /* TeamDetailsService.swift */,
 			);
@@ -353,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				608DF1072913DF19005B0DE5 /* CSTV.plist in Resources */,
 				60A3EE30290EA17A009C2C85 /* LaunchScreen.storyboard in Resources */,
 				60A3EE2D290EA17A009C2C85 /* Assets.xcassets in Resources */,
 			);
