@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TimeView: UIStackView {
+final class TimeView: UIStackView {
     var timeString: String = "" {
         didSet {
             timeLabel.text = timeString
@@ -24,7 +24,7 @@ class TimeView: UIStackView {
     var timeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 8)
+        label.font = .boldSystemFont(ofSize: 8)
         label.textColor = .title
         return label
     }()

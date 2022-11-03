@@ -23,9 +23,7 @@ final class BadgeComponent: UIStackView {
 
     init() {
         super.init(frame: .zero)
-    //    downloadImage(teamImage)
         setup()
-       // teamName.text = name
     }
 
     required init(coder: NSCoder) {
@@ -46,7 +44,7 @@ final class BadgeComponent: UIStackView {
     var teamName: UILabel = {
         let teamLabel = UILabel()
         teamLabel.translatesAutoresizingMaskIntoConstraints = false
-        teamLabel.font = .systemFont(ofSize: 8)
+        teamLabel.font = .systemFont(ofSize: 10)
         teamLabel.textColor = .title
         return teamLabel
     }()

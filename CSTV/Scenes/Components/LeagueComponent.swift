@@ -52,7 +52,7 @@ final class LeagueComponent: UIStackView {
     var leagueText: UILabel = {
         let league = UILabel()
         league.translatesAutoresizingMaskIntoConstraints = false
-        league.font = .systemFont(ofSize: 8)
+        league.font = .systemFont(ofSize: 10)
         league.textColor = .title
         return league
     }()

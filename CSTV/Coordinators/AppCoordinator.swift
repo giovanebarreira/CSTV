@@ -28,14 +28,19 @@ final class AppCoordinator: Coordinator {
 
     private func setupNavigationLayout() {
         navigationController.navigationBar.prefersLargeTitles = true
-     //   navigationController.navigationItem.backButtonDisplayMode = .minimal
 
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .background
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.title]
         appearance.titleTextAttributes = [.foregroundColor: UIColor.title]
         appearance.shadowColor = .clear
+
+        navigationController.navigationBar.tintColor = .title
         navigationController.navigationBar.standardAppearance = appearance
         navigationController.navigationBar.scrollEdgeAppearance = appearance
+
+        UINavigationBar.appearance().backIndicatorImage = UIImage(systemName: "arrow.left")
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.left")
+
     }
 }

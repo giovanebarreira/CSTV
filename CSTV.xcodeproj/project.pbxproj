@@ -15,6 +15,7 @@
 		608282B72911323F007C7F49 /* LeagueComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282B62911323F007C7F49 /* LeagueComponent.swift */; };
 		608282B9291135A2007C7F49 /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282B8291135A2007C7F49 /* UIView+RoundCorners.swift */; };
 		608282BB291145B8007C7F49 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282BA291145B8007C7F49 /* TimeView.swift */; };
+		608DF1032913C755005B0DE5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DF1022913C755005B0DE5 /* PlayerView.swift */; };
 		60A3EE24290EA176009C2C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE23290EA176009C2C85 /* AppDelegate.swift */; };
 		60A3EE26290EA176009C2C85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE25290EA176009C2C85 /* SceneDelegate.swift */; };
 		60A3EE28290EA176009C2C85 /* MatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE27290EA176009C2C85 /* MatchesListViewController.swift */; };
@@ -61,6 +62,7 @@
 		608282B62911323F007C7F49 /* LeagueComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueComponent.swift; sourceTree = "<group>"; };
 		608282B8291135A2007C7F49 /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorners.swift"; sourceTree = "<group>"; };
 		608282BA291145B8007C7F49 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		608DF1022913C755005B0DE5 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		60A3EE20290EA176009C2C85 /* CSTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A3EE23290EA176009C2C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A3EE25290EA176009C2C85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				60B6DB172911C2FE007E886B /* BadgeComponent.swift */,
 				608282B62911323F007C7F49 /* LeagueComponent.swift */,
 				608282BA291145B8007C7F49 /* TimeView.swift */,
+				608DF1022913C755005B0DE5 /* PlayerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				602A80B12912EBCC0081A35A /* TeamDetailsViewController.swift in Sources */,
 				60B827F8290FE0D4005A70F3 /* UIViewController+Spinner.swift in Sources */,
 				60A3EE6E290EE370009C2C85 /* TeamDetails.swift in Sources */,
+				608DF1032913C755005B0DE5 /* PlayerView.swift in Sources */,
 				60B827F5290FD4A9005A70F3 /* MatchesListViewModel.swift in Sources */,
 				602A80B52912F2F90081A35A /* TeamDetailsCoordinator.swift in Sources */,
 				60A3EE55290EA74D009C2C85 /* Coordinator.swift in Sources */,

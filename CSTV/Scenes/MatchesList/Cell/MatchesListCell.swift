@@ -54,7 +54,7 @@ final class MatchesListCell: UITableViewCell {
     private let versusLabel: UILabel = {
         let titleLbl = UILabel()
         titleLbl.translatesAutoresizingMaskIntoConstraints = false
-        titleLbl.font = UIFont.preferredFont(forTextStyle: .body)
+        titleLbl.font = .systemFont(ofSize: 12)
         titleLbl.text = "vs"
         titleLbl.textColor = .subtitle
         return titleLbl
@@ -80,7 +80,6 @@ final class MatchesListCell: UITableViewCell {
         league.leagueName = match.leagueAndSerie
     }
 
-
     override func prepareForReuse() {
         super.prepareForReuse()
         timeView.timeLabel.text = nil
@@ -90,7 +89,6 @@ final class MatchesListCell: UITableViewCell {
         team2.teamName.text = nil
         league.badgeImageView.image = nil
         league.leagueText.text = nil
-
     }
 
     private func setupViewLayout() {
@@ -143,7 +141,7 @@ final class MatchesListCell: UITableViewCell {
             league.topAnchor.constraint(equalToSystemSpacingBelow: divider.bottomAnchor, multiplier: 1),
             league.leadingAnchor.constraint(equalToSystemSpacingAfter: baseView.leadingAnchor, multiplier: 2),
             baseView.trailingAnchor.constraint(equalToSystemSpacingAfter: league.trailingAnchor, multiplier: 0),
-            baseView.bottomAnchor.constraint(equalToSystemSpacingBelow: league.bottomAnchor, multiplier: 2)
+            baseView.bottomAnchor.constraint(equalToSystemSpacingBelow: league.bottomAnchor, multiplier: 1)
         ])
     }
 }
