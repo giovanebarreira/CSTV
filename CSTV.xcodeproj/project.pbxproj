@@ -17,6 +17,8 @@
 		608282BB291145B8007C7F49 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608282BA291145B8007C7F49 /* TimeView.swift */; };
 		608DF1032913C755005B0DE5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DF1022913C755005B0DE5 /* PlayerView.swift */; };
 		608DF1072913DF19005B0DE5 /* CSTV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 608DF1062913DF19005B0DE5 /* CSTV.plist */; };
+		608DF10E2913E730005B0DE5 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DF10C2913E730005B0DE5 /* LaunchView.swift */; };
+		608DF10F2913E730005B0DE5 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608DF10D2913E730005B0DE5 /* LaunchView.xib */; };
 		60A3EE24290EA176009C2C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE23290EA176009C2C85 /* AppDelegate.swift */; };
 		60A3EE26290EA176009C2C85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE25290EA176009C2C85 /* SceneDelegate.swift */; };
 		60A3EE28290EA176009C2C85 /* MatchesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3EE27290EA176009C2C85 /* MatchesListViewController.swift */; };
@@ -65,6 +67,8 @@
 		608282BA291145B8007C7F49 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		608DF1022913C755005B0DE5 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		608DF1062913DF19005B0DE5 /* CSTV.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CSTV.plist; sourceTree = "<group>"; };
+		608DF10C2913E730005B0DE5 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		608DF10D2913E730005B0DE5 /* LaunchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		60A3EE20290EA176009C2C85 /* CSTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A3EE23290EA176009C2C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A3EE25290EA176009C2C85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,16 @@
 				608DF1022913C755005B0DE5 /* PlayerView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		608DF1092913E2F2005B0DE5 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				60A3EE2E290EA17A009C2C85 /* LaunchScreen.storyboard */,
+				608DF10C2913E730005B0DE5 /* LaunchView.swift */,
+				608DF10D2913E730005B0DE5 /* LaunchView.xib */,
+			);
+			name = Launch;
 			sourceTree = "<group>";
 		};
 		60A3EE17290EA176009C2C85 = {
@@ -209,7 +223,7 @@
 				60A3EE23290EA176009C2C85 /* AppDelegate.swift */,
 				60A3EE25290EA176009C2C85 /* SceneDelegate.swift */,
 				60A3EE2C290EA17A009C2C85 /* Assets.xcassets */,
-				60A3EE2E290EA17A009C2C85 /* LaunchScreen.storyboard */,
+				608DF1092913E2F2005B0DE5 /* Launch */,
 				60A3EE31290EA17B009C2C85 /* Info.plist */,
 			);
 			name = Resources;
@@ -357,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				608DF1072913DF19005B0DE5 /* CSTV.plist in Resources */,
+				608DF10F2913E730005B0DE5 /* LaunchView.xib in Resources */,
 				60A3EE30290EA17A009C2C85 /* LaunchScreen.storyboard in Resources */,
 				60A3EE2D290EA17A009C2C85 /* Assets.xcassets in Resources */,
 			);
@@ -377,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				602A80B12912EBCC0081A35A /* TeamDetailsViewController.swift in Sources */,
+				608DF10E2913E730005B0DE5 /* LaunchView.swift in Sources */,
 				60B827F8290FE0D4005A70F3 /* UIViewController+Spinner.swift in Sources */,
 				60A3EE6E290EE370009C2C85 /* TeamDetails.swift in Sources */,
 				608DF1032913C755005B0DE5 /* PlayerView.swift in Sources */,

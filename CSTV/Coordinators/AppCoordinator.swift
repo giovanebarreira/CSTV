@@ -22,8 +22,13 @@ final class AppCoordinator: Coordinator {
     }
 
     func start() {
-        let matchesListCoordiantor = MatchesListCoordinator(navigationController: navigationController)
-        matchesListCoordiantor.start()
+        navigationController.pushViewController(LaunchView(), animated: true)
+        let matchesListCoordinator = MatchesListCoordinator(navigationController: navigationController)
+
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
+            self.navigationController.viewControllers.removeAll()
+            matchesListCoordinator.start()
+        }
     }
 
     private func setupNavigationLayout() {
