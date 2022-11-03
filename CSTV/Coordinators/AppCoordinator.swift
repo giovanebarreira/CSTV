@@ -25,7 +25,7 @@ final class AppCoordinator: Coordinator {
         navigationController.pushViewController(LaunchView(), animated: true)
         let matchesListCoordinator = MatchesListCoordinator(navigationController: navigationController)
 
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
             self.navigationController.viewControllers.removeAll()
             matchesListCoordinator.start()
         }
@@ -38,14 +38,9 @@ final class AppCoordinator: Coordinator {
         appearance.backgroundColor = .background
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.title]
         appearance.titleTextAttributes = [.foregroundColor: UIColor.title]
-        appearance.shadowColor = .clear
 
         navigationController.navigationBar.tintColor = .title
         navigationController.navigationBar.standardAppearance = appearance
         navigationController.navigationBar.scrollEdgeAppearance = appearance
-
-        UINavigationBar.appearance().backIndicatorImage = UIImage(systemName: "arrow.left")
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.left")
-
     }
 }

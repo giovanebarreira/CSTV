@@ -12,6 +12,7 @@ final class LeagueComponent: UIStackView {
     var badgeImage: String = "" {
         didSet {
             downloadImage(badgeImage)
+            badgeImageView.backgroundColor = badgeImage == "" ? .placeholder : .clear
         }
     }
 
@@ -37,15 +38,20 @@ final class LeagueComponent: UIStackView {
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        badgeImageView.layer.cornerRadius = (badgeImageView.frame.size.width ) / 2
+        badgeImageView.clipsToBounds = true
+    }
     
     var badgeImageView: UIImageView = {
         let badge = UIImageView()
         badge.translatesAutoresizingMaskIntoConstraints = false
         badge.contentMode = .scaleAspectFit
-        badge.layer.cornerRadius = badge.frame.height/2
-        badge.clipsToBounds = true
-        badge.layer.masksToBounds = true
+        badge.layer.masksToBounds = false
         badge.widthAnchor.constraint(equalToConstant: 16).isActive = true
+        badge.heightAnchor.constraint(equalToConstant: 16).isActive = true
         return badge
     }()
 

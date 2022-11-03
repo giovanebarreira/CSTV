@@ -9,9 +9,11 @@ import UIKit
 import Kingfisher
 
 final class BadgeComponent: UIStackView {
+
     var teamImage: String = "" {
         didSet {
             downloadImage(teamImage)
+            badgeImage.backgroundColor = teamImage == "" ? .placeholder : .clear
         }
     }
 
@@ -30,12 +32,17 @@ final class BadgeComponent: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        badgeImage.layer.cornerRadius = (badgeImage.frame.size.width ) / 2
+        badgeImage.clipsToBounds = true
+    }
+
     var badgeImage: UIImageView = {
         let badgeImage = UIImageView()
         badgeImage.translatesAutoresizingMaskIntoConstraints = false
         badgeImage.contentMode = .scaleAspectFit
-        badgeImage.layer.masksToBounds = true
-        badgeImage.clipsToBounds = true
+        badgeImage.layer.masksToBounds = false
         badgeImage.heightAnchor.constraint(equalToConstant: 60).isActive = true
         badgeImage.widthAnchor.constraint(equalToConstant: 60).isActive = true
         return badgeImage

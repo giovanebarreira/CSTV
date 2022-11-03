@@ -69,11 +69,27 @@ final class TeamDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        configureBackButton()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
         viewModel.delegate = self
         viewModel.fetchTeamsData()
+    }
+
+    private func configureBackButton() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "arrow.left"),
+            style: .plain,
+            target: self,
+            action: #selector(popViewController))
+    }
+
+    @objc func popViewController() {
+        navigationController?.popViewController(animated: true)
     }
 
     private func fillComponentsProperties() {

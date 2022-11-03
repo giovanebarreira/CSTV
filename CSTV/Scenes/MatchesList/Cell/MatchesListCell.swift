@@ -141,7 +141,6 @@ final class MatchesListCell: UITableViewCell {
             league.topAnchor.constraint(equalToSystemSpacingBelow: divider.bottomAnchor, multiplier: 1),
             league.leadingAnchor.constraint(equalToSystemSpacingAfter: baseView.leadingAnchor, multiplier: 2),
             baseView.trailingAnchor.constraint(equalToSystemSpacingAfter: league.trailingAnchor, multiplier: 0),
-            baseView.bottomAnchor.constraint(equalToSystemSpacingBelow: league.bottomAnchor, multiplier: 1)
         ])
     }
 }

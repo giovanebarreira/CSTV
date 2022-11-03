@@ -14,7 +14,7 @@ final class TeamDetailsCoordinator: Coordinator {
     init(navigationController: UINavigationController, selectedMatch: MatchesListDisplay) {
         self.navigationController = navigationController
         self.selectedMatch = selectedMatch
-        setupNavigationLayout()
+        navigationController.navigationBar.prefersLargeTitles = false
     }
 
     func start() {
@@ -24,18 +24,5 @@ final class TeamDetailsCoordinator: Coordinator {
         let viewController = TeamDetailsViewController(viewModel: viewModel)
 
         navigationController.pushViewController(viewController, animated: true)
-    }
-
-    private func setupNavigationLayout() {
-        navigationController.navigationBar.prefersLargeTitles = false
-        navigationController.navigationItem.backButtonDisplayMode = .minimal
-
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .background
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.title]
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.title]
-        appearance.shadowColor = .clear
-        navigationController.navigationBar.standardAppearance = appearance
-        navigationController.navigationBar.scrollEdgeAppearance = appearance
     }
 }
