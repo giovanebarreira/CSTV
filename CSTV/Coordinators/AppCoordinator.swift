@@ -38,6 +38,7 @@ final class AppCoordinator: Coordinator {
         appearance.backgroundColor = .background
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.title]
         appearance.titleTextAttributes = [.foregroundColor: UIColor.title]
+        appearance.shadowColor = .clear
 
         navigationController.navigationBar.tintColor = .title
         navigationController.navigationBar.standardAppearance = appearance
